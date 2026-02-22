@@ -1,0 +1,151 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="Kontakt | Warsztat samochodowy Wielka Nieszawka | D.JANC WORKSHOP"
+  description="Skontaktuj się z D.JANC WORKSHOP. ul. Toruńska 25, Wielka Nieszawka. Tel: 451-273-483. Diagnostyka, mechanika, wulkanizacja, klimatyzacja — Toruń i okolice."
+>
+  <!-- PAGE HEADER -->
+  <section class="bg-[#1a2332] text-white py-12 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-3xl md:text-4xl font-bold mb-3">Kontakt — D.JANC WORKSHOP</h1>
+      <p class="text-gray-300">Zadzwoń lub napisz — odpowiemy na każde pytanie</p>
+    </div>
+  </section>
+
+  <section class="py-12 px-4">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+      <!-- NAP BLOCK -->
+      <div>
+        <h2 class="text-2xl font-bold text-[#1a2332] mb-6">Dane kontaktowe</h2>
+
+        <div class="bg-[#f8f9fa] rounded-xl p-6 mb-6">
+          <div class="space-y-4 text-sm">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">📍</span>
+              <div>
+                <p class="font-bold text-[#1a2332]">Adres</p>
+                <p class="text-gray-600">ul. Toruńska 25<br />87-165 Wielka Nieszawka<br />woj. kujawsko-pomorskie</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">📞</span>
+              <div>
+                <p class="font-bold text-[#1a2332]">Telefon</p>
+                <a href="tel:+48451273483" class="text-[#e17055] font-bold text-lg hover:underline">
+                  +48 451 273 483
+                </a>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">🕐</span>
+              <div>
+                <p class="font-bold text-[#1a2332]">Godziny otwarcia</p>
+                <table class="text-gray-600 mt-1">
+                  <tbody>
+                    <tr><td class="pr-4">Poniedziałek – Piątek</td><td class="font-medium">8:00 – 17:00</td></tr>
+                    <tr><td class="pr-4">Sobota</td><td class="font-medium">8:00 – 13:00</td></tr>
+                    <tr><td class="pr-4">Niedziela</td><td class="text-gray-400">Zamknięte</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="tel:+48451273483"
+           class="block w-full bg-[#e17055] text-white px-6 py-4 rounded font-bold text-center text-lg hover:bg-[#c0392b] transition-colors mb-8">
+          Zadzwoń Teraz: 451-273-483
+        </a>
+
+        <!-- DIRECTIONS -->
+        <h2 class="text-xl font-bold text-[#1a2332] mb-4">Jak dojechać z Torunia?</h2>
+        <div class="text-gray-600 text-sm space-y-2">
+          <p><strong>Z centrum Torunia (ok. 7 km, 10 min):</strong></p>
+          <ol class="list-decimal list-inside space-y-1 pl-2">
+            <li>Kieruj się na północ ul. Grudziądzką / drogą krajową nr 91</li>
+            <li>Przekrocz most drogowy (Most Antoniego) lub ul. Toruńską</li>
+            <li>Skręć w ul. Toruńską w kierunku Wielka Nieszawka</li>
+            <li>Warsztat znajduje się przy ul. Toruńskiej 25</li>
+          </ol>
+          <p class="mt-3 text-gray-500">Bezpłatny parking przed warsztatem.</p>
+        </div>
+      </div>
+
+      <!-- CONTACT FORM -->
+      <div>
+        <h2 class="text-2xl font-bold text-[#1a2332] mb-6">Napisz do nas</h2>
+        <form action="mailto:warsztat@djanc.pl" method="post" enctype="text/plain" class="space-y-4">
+          <div>
+            <label for="imie" class="block text-sm font-bold text-[#1a2332] mb-1">Imię i nazwisko *</label>
+            <input
+              type="text"
+              id="imie"
+              name="imie"
+              required
+              placeholder="Jan Kowalski"
+              class="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:border-[#e17055]"
+            />
+          </div>
+          <div>
+            <label for="telefon" class="block text-sm font-bold text-[#1a2332] mb-1">Telefon *</label>
+            <input
+              type="tel"
+              id="telefon"
+              name="telefon"
+              required
+              placeholder="+48 500 000 000"
+              class="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:border-[#e17055]"
+            />
+          </div>
+          <div>
+            <label for="marka" class="block text-sm font-bold text-[#1a2332] mb-1">Marka i model auta</label>
+            <input
+              type="text"
+              id="marka"
+              name="marka"
+              placeholder="np. Volkswagen Golf 2018"
+              class="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:border-[#e17055]"
+            />
+          </div>
+          <div>
+            <label for="opis" class="block text-sm font-bold text-[#1a2332] mb-1">Opis problemu *</label>
+            <textarea
+              id="opis"
+              name="opis"
+              required
+              rows="4"
+              placeholder="Opisz problem z samochodem lub usługę, której potrzebujesz..."
+              class="w-full border border-gray-300 rounded px-4 py-3 text-sm focus:outline-none focus:border-[#e17055] resize-none"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-[#e17055] text-white px-6 py-4 rounded font-bold text-base hover:bg-[#c0392b] transition-colors">
+            Wyślij wiadomość
+          </button>
+          <p class="text-xs text-gray-400">* Pola wymagane. Możesz też zadzwonić bezpośrednio: <a href="tel:+48451273483" class="text-[#e17055] font-bold">451-273-483</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOOGLE MAPS FULL WIDTH -->
+  <section class="px-4 pb-12">
+    <div class="max-w-6xl mx-auto">
+      <div class="rounded-xl overflow-hidden shadow-md">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2400.0!2d18.5833!3d53.0500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zVG9ydcWEc2thIDI1LCBXaWVsa2EgTmllc3phd2th!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
+          width="100%"
+          height="450"
+          style="border:0;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="D.JANC WORKSHOP na mapie — ul. Toruńska 25, Wielka Nieszawka">
+        </iframe>
+      </div>
+    </div>
+  </section>
+</Layout>
