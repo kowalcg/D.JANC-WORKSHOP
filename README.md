@@ -2,7 +2,7 @@
 
 Strona internetowa warsztatu samochodowego **D.JANC WORKSHOP** w Wielkiej Nieszawce k. Torunia.
 
-**[djanc.pl](https://djanc.pl)** — link do strony
+**Strona:** djanc.pl (do wdrożenia)
 
 ---
 
