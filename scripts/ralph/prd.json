@@ -425,7 +425,7 @@
         "/faq has FAQPage schema with 20+ Q&As",
         "npm run build passes with no errors"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": 18,
