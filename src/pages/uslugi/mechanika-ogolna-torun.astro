@@ -1,0 +1,225 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faqItems = [
+  {
+    q: 'Ile kosztuje naprawa silnika w D.JANC WORKSHOP?',
+    a: 'Koszt naprawy silnika zależy od rodzaju usterki i marki auta. Drobne naprawy (wymiana uszkodzonej uszczelnki) mogą kosztować 200–400 PLN. Poważniejsze naprawy wyceniamy indywidualnie. Zawsze podajemy kosztorys przed przystąpieniem do pracy.'
+  },
+  {
+    q: 'Jakie marki samochodów naprawiacie?',
+    a: 'Obsługujemy wszystkie popularne marki: Volkswagen, Toyota, Ford, Opel, Renault, Peugeot, Skoda, BMW, Audi, Mercedes, Fiat, Hyundai, Kia, Seat, Citroen i inne. Zarówno samochody osobowe, jak i dostawcze.'
+  },
+  {
+    q: 'Czy naprawiacie zawieszenie samochodowe?',
+    a: 'Tak — wykonujemy pełne naprawy zawieszenia: amortyzatory, wahacze, sworzenie, tuleje, drążki, łożyska kół, stabilizatory. Wyceniamy naprawę zawieszenia po bezpłatnych oględzinach.'
+  },
+  {
+    q: 'Co to jest geometria kół i kiedy jej potrzebuję?',
+    a: 'Geometria kół (ustawienie zbieżności i kąta pochylenia) powinna być wykonana po każdej wymianie elementów zawieszenia, po uderzeniu w krawężnik lub gdy auto wyraźnie ściąga w bok. Koszt od 95 PLN. Poprawna geometria chroni opony przed nierównomiernym zużyciem.'
+  },
+  {
+    q: 'Jak długo trwa naprawa mechaniczna?',
+    a: 'Czas naprawy zależy od rodzaju usterki. Drobne naprawy (np. wymiana świec, paska rozrządu) trwają 1–3 godziny. Poważniejsze naprawy silnika lub skrzyni biegów mogą wymagać 1–3 dni roboczych. Informujemy o szacowanym czasie przy przyjęciu auta.'
+  },
+  {
+    q: 'Czy używacie oryginalnych części zamiennych?',
+    a: 'Oferujemy zarówno oryginalne części (OEM) jak i wysokiej jakości zamienniki renomowanych producentów (np. Bosch, NGK, Sachs, LuK). Wybór należy do klienta — przedstawiamy obie opcje z cenami przed naprawą.'
+  },
+];
+
+const schema = JSON.stringify([
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Mechanika Ogólna Toruń",
+    "provider": {
+      "@type": "AutoRepair",
+      "name": "D.JANC WORKSHOP",
+      "telephone": "+48451273483",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Toruńska 25",
+        "addressLocality": "Wielka Nieszawka",
+        "postalCode": "87-165",
+        "addressCountry": "PL"
+      }
+    },
+    "areaServed": [
+      {"@type": "City", "name": "Toruń"},
+      {"@type": "Place", "name": "Wielka Nieszawka"}
+    ],
+    "offers": {
+      "@type": "Offer",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "PLN"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {"@type": "Answer", "text": item.a}
+    }))
+  }
+]);
+---
+<Layout
+  title="Mechanika Ogólna Toruń | D.JANC WORKSHOP — Wielka Nieszawka"
+  description="Naprawa silnika, zawieszenia, skrzyni biegów w Toruniu. D.JANC WORKSHOP przy ul. Toruńskiej 25, Wielka Nieszawka. Kosztorys przed naprawą. Tel: 451-273-483."
+  schema={schema}
+>
+  <section class="bg-[#1a2332] text-white py-12 px-4">
+    <div class="max-w-4xl mx-auto">
+      <nav class="text-sm text-gray-400 mb-4">
+        <a href="/" class="hover:text-white">Strona główna</a> &rsaquo;
+        <a href="/uslugi" class="hover:text-white">Usługi</a> &rsaquo;
+        <span class="text-gray-300">Mechanika Ogólna</span>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-bold mb-3">Mechanika Ogólna Toruń</h1>
+      <p class="text-gray-300">D.JANC WORKSHOP · ul. Toruńska 25, Wielka Nieszawka</p>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-4 py-10">
+
+    <section class="mb-10 bg-[#fff3f0] border-l-4 border-[#e17055] p-6 rounded-r-xl">
+      <p class="text-gray-800 leading-relaxed text-lg">
+        <strong>D.JANC WORKSHOP oferuje kompleksowe usługi mechaniczne</strong> dla wszystkich marek samochodów. Cena naprawy zależy od zakresu usterki — zawsze przedstawiamy szczegółowy kosztorys przed przystąpieniem do pracy. Obsługujemy silniki, zawieszenia, skrzynie biegów, układy przeniesienia napędu oraz elektryko.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-4">Zakres usług mechanicznych</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {[
+          'Naprawa i regulacja silnika (uszczelki, zawory, rozrząd)',
+          'Wymiana paska lub łańcucha rozrządu',
+          'Naprawa zawieszenia (amortyzatory, wahacze, tuleje)',
+          'Naprawa skrzyni biegów — manualna i automatyczna',
+          'Wymiana sprzęgła i koła dwumasowego',
+          'Naprawy układu napędowego (półosie, przeguby)',
+          'Naprawa elektryki: alternator, rozrusznik, instalacja',
+          'Geometria kół (zbieżność, pochylenie) — od 95 PLN',
+          'Wymiana filtrów (powietrza, kabinowy, paliwa, oleju)',
+          'Naprawa i wymiana układu wydechowego',
+          'Wymiana płynów (chłodniczy, hamulcowy, skrzyni)',
+          'Przeglądy serwisowe według zaleceń producenta',
+        ].map(item => (
+          <div class="flex items-start gap-2 text-sm text-gray-700">
+            <span class="text-[#e17055] font-bold mt-0.5">✓</span>
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-4">Nasz proces naprawy</h2>
+      <ol class="space-y-4">
+        {[
+          {step: '1', title: 'Przyjęcie pojazdu i oględziny', desc: 'Przyjmujemy samochód, omawiamy zgłoszone usterki i przeprowadzamy wstępną kontrolę techniczną.'},
+          {step: '2', title: 'Diagnoza i identyfikacja problemu', desc: 'Ustalamy dokładną przyczynę usterki — wizualna inspekcja, diagnostyka komputerowa jeśli potrzebna.'},
+          {step: '3', title: 'Kosztorys naprawy', desc: 'Przygotowujemy szczegółowy kosztorys: robocizna + części. Podajemy go PRZED rozpoczęciem naprawy.'},
+          {step: '4', title: 'Naprawa', desc: 'Po Twojej akceptacji kosztorysu przystępujemy do pracy. Używamy profesjonalnych narzędzi i sprawdzonych części.'},
+          {step: '5', title: 'Odbiór i weryfikacja', desc: 'Po naprawie sprawdzamy pojazd i omawiamy wykonaną pracę. Wydajemy fakturę i gwarancję na naprawę.'},
+        ].map(p => (
+          <li class="flex gap-4 items-start">
+            <span class="flex-shrink-0 w-9 h-9 rounded-full bg-[#e17055] text-white font-bold flex items-center justify-center text-sm">{p.step}</span>
+            <div>
+              <p class="font-bold text-[#1a2332]">{p.title}</p>
+              <p class="text-sm text-gray-600">{p.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-4">Orientacyjny cennik mechaniki</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-[#1a2332] text-white">
+              <th class="text-left px-4 py-3">Usługa</th>
+              <th class="text-right px-4 py-3">Cena orientacyjna</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Wymiana paska rozrządu (bez części)', 'od 200 PLN'],
+              ['Wymiana sprzęgła (bez części)', 'od 350 PLN'],
+              ['Wymiana amortyzatora (szt)', 'od 100 PLN'],
+              ['Geometria kół', 'od 95 PLN'],
+              ['Wymiana rozrusznika/alternatora', 'od 150 PLN'],
+              ['Przegląd serwisowy', 'od 80 PLN'],
+              ['Wycena złożonych napraw', 'bezpłatna po oględzinach'],
+            ].map(([usluga, cena]) => (
+              <tr class="border-b border-gray-200 even:bg-[#f8f9fa]">
+                <td class="px-4 py-3 text-gray-700">{usluga}</td>
+                <td class="px-4 py-3 text-right font-bold text-[#e17055]">{cena}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-gray-400 mt-2">Ceny za robociznę, bez kosztu części. Ostateczna wycena po oględzinach.</p>
+    </section>
+
+    <section class="mb-10 bg-[#f8f9fa] rounded-xl p-6">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-4">Dlaczego warto wybrać D.JANC WORKSHOP?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {[
+          {icon: '📋', title: 'Kosztorys przed naprawą', desc: 'Zawsze znasz cenę zanim mechanik zacznie pracę. Żadnych ukrytych opłat.'},
+          {icon: '🔧', title: 'Doświadczeni mechanicy', desc: 'Wieloletnie doświadczenie w naprawach wszystkich marek samochodów osobowych i dostawczych.'},
+          {icon: '✅', title: 'Gwarancja na naprawy', desc: 'Udzielamy gwarancji na wykonane naprawy i zamontowane części zamienne.'},
+        ].map(item => (
+          <div class="text-center">
+            <div class="text-3xl mb-2">{item.icon}</div>
+            <h3 class="font-bold text-[#1a2332] mb-1">{item.title}</h3>
+            <p class="text-sm text-gray-600">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-6">Często zadawane pytania</h2>
+      <div class="space-y-4">
+        {faqItems.map(item => (
+          <details class="border border-gray-200 rounded-xl overflow-hidden">
+            <summary class="px-5 py-4 font-bold text-[#1a2332] cursor-pointer hover:bg-[#f8f9fa] list-none flex justify-between items-center">
+              <span>{item.q}</span>
+              <span class="text-[#e17055] ml-2 flex-shrink-0">▼</span>
+            </summary>
+            <div class="px-5 py-4 text-sm text-gray-700 border-t border-gray-100">{item.a}</div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-10 bg-[#1a2332] text-white rounded-xl p-8 text-center">
+      <h2 class="text-2xl font-bold mb-3">Umów naprawę w D.JANC WORKSHOP</h2>
+      <p class="text-gray-300 mb-6">Zadzwoń — umówimy termin i wycenimy naprawę telefonicznie.</p>
+      <a href="tel:+48451273483"
+         class="inline-block bg-[#e17055] text-white px-10 py-4 rounded font-bold text-lg hover:bg-[#c0392b] transition-colors">
+        Zadzwoń Teraz: 451-273-483
+      </a>
+    </section>
+
+    <section>
+      <div class="rounded-xl overflow-hidden shadow-md">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2400.0!2d18.5833!3d53.0500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zVG9ydcWEc2thIDI1LCBXaWVsa2EgTmllc3phd2th!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
+          width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="D.JANC WORKSHOP na mapie">
+        </iframe>
+      </div>
+      <p class="text-sm text-gray-500 mt-2">ul. Toruńska 25, 87-165 Wielka Nieszawka — 7 km od centrum Torunia</p>
+    </section>
+  </div>
+</Layout>

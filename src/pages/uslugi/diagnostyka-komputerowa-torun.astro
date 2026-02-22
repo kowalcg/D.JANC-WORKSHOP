@@ -1,0 +1,242 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faqItems = [
+  {
+    q: 'Ile kosztuje diagnostyka komputerowa w D.JANC WORKSHOP?',
+    a: 'Diagnostyka komputerowa OBD kosztuje od 80 do 150 PLN w zależności od zakresu analizy. Podstawowy odczyt kodów błędów to 80 PLN. Pełna diagnoza wieloukładowa to 120–150 PLN. Cena jest podawana przed wykonaniem usługi.'
+  },
+  {
+    q: 'Jak długo trwa diagnostyka komputerowa?',
+    a: 'Standardowa diagnostyka OBD trwa od 30 do 60 minut. W przypadku złożonych usterek lub potrzeby testów jazdy czas może być dłuższy. O czasie poinformujemy Cię przy umawianiu wizyty.'
+  },
+  {
+    q: 'Co obejmuje diagnostyka komputerowa samochodu?',
+    a: 'Diagnostyka obejmuje odczyt i analizę kodów błędów ze wszystkich modułów elektronicznych: silnik (ECU), skrzynia biegów, ABS, ESP, poduszki powietrzne, klimatyzacja, układ kierowniczy. Otrzymujesz pisemny raport z wynikami i zaleceniami.'
+  },
+  {
+    q: 'Czy diagnoza eliminuje potrzebę naprawy?',
+    a: 'Diagnostyka to pierwszy krok — identyfikuje przyczynę problemu. Po diagnozie przedstawiamy kosztorys ewentualnej naprawy. Możesz zdecydować, czy chcesz przeprowadzić naprawę u nas czy gdzie indziej — diagnostyka jest odrębną usługą.'
+  },
+  {
+    q: 'Czy naprawiacie błędy wykryte podczas diagnostyki?',
+    a: 'Tak — po diagnostyce możemy od razu przystąpić do naprawy. Zawsze przedstawiamy kosztorys przed naprawą. Obsługujemy wszystkie marki samochodów osobowych i dostawczych.'
+  },
+  {
+    q: 'Czy kasowanie kodów błędów wystarczy?',
+    a: 'Skasowanie kodów błędów bez usunięcia przyczyny usterki to tylko chwilowe rozwiązanie — błąd wróci. Zalecamy pełną diagnostykę i naprawę przyczyny. Bezpieczeństwo jazdy zależy od sprawności wszystkich układów.'
+  },
+];
+
+const schemaService = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Diagnostyka Komputerowa Toruń",
+  "provider": {
+    "@type": "AutoRepair",
+    "name": "D.JANC WORKSHOP",
+    "telephone": "+48451273483",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ul. Toruńska 25",
+      "addressLocality": "Wielka Nieszawka",
+      "postalCode": "87-165",
+      "addressCountry": "PL"
+    }
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Toruń"},
+    {"@type": "Place", "name": "Wielka Nieszawka"}
+  ],
+  "offers": {
+    "@type": "Offer",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "80",
+      "maxPrice": "150",
+      "priceCurrency": "PLN"
+    }
+  }
+};
+
+const schemaFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
+  }))
+};
+
+const schema = JSON.stringify([schemaService, schemaFaq]);
+---
+<Layout
+  title="Diagnostyka Komputerowa Toruń | D.JANC WORKSHOP — Wielka Nieszawka"
+  description="Diagnostyka komputerowa OBD w D.JANC WORKSHOP od 80 do 150 PLN. Odczyt kodów błędów, analiza układów elektronicznych. ul. Toruńska 25, Wielka Nieszawka. Tel: 451-273-483."
+  schema={schema}
+>
+  <!-- PAGE HEADER -->
+  <section class="bg-[#1a2332] text-white py-12 px-4">
+    <div class="max-w-4xl mx-auto">
+      <nav class="text-sm text-gray-400 mb-4">
+        <a href="/" class="hover:text-white">Strona główna</a> &rsaquo;
+        <a href="/uslugi" class="hover:text-white">Usługi</a> &rsaquo;
+        <span class="text-gray-300">Diagnostyka Komputerowa</span>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-bold mb-3">Diagnostyka Komputerowa Toruń</h1>
+      <p class="text-gray-300">D.JANC WORKSHOP · ul. Toruńska 25, Wielka Nieszawka</p>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-4 py-10">
+
+    <!-- 1. OPENING PARAGRAPH — answer-first -->
+    <section class="mb-10 bg-[#fff3f0] border-l-4 border-[#e17055] p-6 rounded-r-xl">
+      <p class="text-gray-800 leading-relaxed text-lg">
+        <strong>Diagnostyka komputerowa OBD w D.JANC WORKSHOP kosztuje od 80 do 150 PLN</strong> i trwa 30–60 minut. Odczytujemy kody błędów ze wszystkich układów elektronicznych pojazdu — silnik, ABS, ESP, poduszki powietrzne i inne. Po diagnozie otrzymujesz szczegółowy raport oraz kosztorys ewentualnej naprawy.
+      </p>
+    </section>
+
+    <!-- 2. CO OBEJMUJE -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-4">Co obejmuje diagnostyka?</h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {[
+          'Odczyt kodów błędów ze wszystkich modułów (ECU, ABS, ESP, SRS)',
+          'Analiza parametrów pracy silnika w czasie rzeczywistym',
+          'Diagnostyka układu klimatyzacji i wtrysku paliwa',
+          'Sprawdzenie stanu akumulatora i alternatora',
+          'Analiza układu kierowniczego (elektryczny wspomaganie)',
+          'Odczyt błędów skrzyni biegów (automatycznej i manualnej)',
+          'Diagnostyka układu hamulcowego (ABS, ESP, EBD)',
+          'Pisemny raport z wynikami i zaleceniami naprawy',
+        ].map(item => (
+          <li class="flex items-start gap-2 text-sm text-gray-700">
+            <span class="text-[#e17055] font-bold mt-0.5">✓</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- 3. NASZ PROCES -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-4">Nasz proces diagnostyczny</h2>
+      <ol class="space-y-4">
+        {[
+          {step: '1', title: 'Podłączenie skanera OBD', desc: 'Podłączamy profesjonalny skaner diagnostyczny do złącza OBD-II w Twoim samochodzie.'},
+          {step: '2', title: 'Odczyt kodów błędów', desc: 'Pobieramy dane ze wszystkich modułów elektronicznych — silnik, skrzynia, hamulce, poduszki, klimatyzacja.'},
+          {step: '3', title: 'Analiza wyników', desc: 'Mechanik analizuje kody błędów, wartości parametrów i historię usterek pojazdu.'},
+          {step: '4', title: 'Diagnoza przyczyny', desc: 'Identyfikujemy faktyczną przyczynę usterki — nie tylko objaw (kod błędu).'},
+          {step: '5', title: 'Raport i kosztorys', desc: 'Otrzymujesz pisemny raport z diagnozą oraz kosztorys naprawy zanim zdecydujesz o dalszych krokach.'},
+        ].map(p => (
+          <li class="flex gap-4 items-start">
+            <span class="flex-shrink-0 w-9 h-9 rounded-full bg-[#e17055] text-white font-bold flex items-center justify-center text-sm">{p.step}</span>
+            <div>
+              <p class="font-bold text-[#1a2332]">{p.title}</p>
+              <p class="text-sm text-gray-600">{p.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <!-- 4. CENNIK -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-4">Cennik diagnostyki komputerowej</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-[#1a2332] text-white">
+              <th class="text-left px-4 py-3">Usługa</th>
+              <th class="text-right px-4 py-3">Cena</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Podstawowy odczyt kodów błędów (1 moduł)', 'od 80 PLN'],
+              ['Pełna diagnostyka wieloukładowa', '120–150 PLN'],
+              ['Diagnostyka + kasowanie błędów', 'od 80 PLN'],
+              ['Diagnostyka + kosztorys naprawy', 'wliczone w cenę'],
+              ['Testy parametrów live (podczas jazdy)', 'od 100 PLN'],
+            ].map(([usluga, cena]) => (
+              <tr class="border-b border-gray-200 even:bg-[#f8f9fa]">
+                <td class="px-4 py-3 text-gray-700">{usluga}</td>
+                <td class="px-4 py-3 text-right font-bold text-[#e17055]">{cena}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-gray-400 mt-2">Ceny orientacyjne. Ostateczna wycena po oględzinach. Zadzwoń: <a href="tel:+48451273483" class="text-[#e17055]">451-273-483</a></p>
+    </section>
+
+    <!-- 5. DLACZEGO WARTO -->
+    <section class="mb-10 bg-[#f8f9fa] rounded-xl p-6">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-4">Dlaczego warto wybrać D.JANC WORKSHOP?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {[
+          {icon: '💰', title: 'Cena przed naprawą', desc: 'Zawsze podajemy kosztorys zanim przystąpimy do pracy. Żadnych niespodzianek na rachunku.'},
+          {icon: '🔬', title: 'Profesjonalny sprzęt', desc: 'Używamy nowoczesnych skanerów diagnostycznych obsługujących wszystkie marki i modele.'},
+          {icon: '🚗', title: 'Wszystkie marki', desc: 'Toyota, VW, Ford, Opel, BMW, Audi, Skoda, Renault, Peugeot, Fiat — obsługujemy wszystkich.'},
+        ].map(item => (
+          <div class="text-center">
+            <div class="text-3xl mb-2">{item.icon}</div>
+            <h3 class="font-bold text-[#1a2332] mb-1">{item.title}</h3>
+            <p class="text-sm text-gray-600">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- 6. FAQ -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-6">Najczęściej zadawane pytania</h2>
+      <div class="space-y-4">
+        {faqItems.map(item => (
+          <details class="border border-gray-200 rounded-xl overflow-hidden">
+            <summary class="px-5 py-4 font-bold text-[#1a2332] cursor-pointer hover:bg-[#f8f9fa] list-none flex justify-between items-center">
+              <span>{item.q}</span>
+              <span class="text-[#e17055] ml-2 flex-shrink-0">▼</span>
+            </summary>
+            <div class="px-5 py-4 text-sm text-gray-700 border-t border-gray-100">
+              {item.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- 7. CTA -->
+    <section class="mb-10 bg-[#1a2332] text-white rounded-xl p-8 text-center">
+      <h2 class="text-2xl font-bold mb-3">Umów diagnostykę komputerową</h2>
+      <p class="text-gray-300 mb-6">Zadzwoń teraz — umówimy termin i podamy dokładną cenę.</p>
+      <a href="tel:+48451273483"
+         class="inline-block bg-[#e17055] text-white px-10 py-4 rounded font-bold text-lg hover:bg-[#c0392b] transition-colors">
+        Zadzwoń Teraz: 451-273-483
+      </a>
+    </section>
+
+    <!-- 8. GOOGLE MAPS -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-[#1a2332] mb-4">Jak do nas dojechać?</h2>
+      <div class="rounded-xl overflow-hidden shadow-md">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2400.0!2d18.5833!3d53.0500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zVG9ydcWEc2thIDI1LCBXaWVsa2EgTmllc3phd2th!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
+          width="100%"
+          height="300"
+          style="border:0;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="D.JANC WORKSHOP na mapie">
+        </iframe>
+      </div>
+      <p class="text-sm text-gray-500 mt-2">ul. Toruńska 25, 87-165 Wielka Nieszawka — 7 km od centrum Torunia</p>
+    </section>
+  </div>
+</Layout>

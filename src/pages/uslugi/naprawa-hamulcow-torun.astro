@@ -1,0 +1,231 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faqItems = [
+  {
+    q: 'Ile kosztuje naprawa hamulców w D.JANC WORKSHOP?',
+    a: 'Wymiana klocków hamulcowych (bez części) to od 200 PLN za oś. Wymiana tarcz hamulcowych (bez części) od 300 PLN za oś. Komplet klocki + tarcze przód i tył: od 600 PLN za robociznę. Do tego dolicza się koszt części — ceny podajemy przed przystąpieniem do naprawy.'
+  },
+  {
+    q: 'Jak poznać, że klocki hamulcowe wymagają wymiany?',
+    a: 'Sygnały zużytych klocków: piszczący dźwięk przy hamowaniu (wskaźnik zużycia), dłuższa droga hamowania, wibracje lub szarpanie przy hamowaniu, koło skręca przy hamowaniu, wskaźnik ABS lub hamulców na desce rozdzielczej. Nie czekaj — hamulce to bezpieczeństwo.'
+  },
+  {
+    q: 'Czy klocki i tarcze wymienia się zawsze razem?',
+    a: 'Niekoniecznie — zależy od stanu tarcz. Jeśli tarcze mają wystarczającą grubość roboczą i brak bruzd, można wymienić tylko klocki. Jeśli tarcze są zbyt cienkie, mają bruzdy lub pęknięcia — wymagają wymiany wraz z klockami. Sprawdzamy stan tarcz podczas serwisu.'
+  },
+  {
+    q: 'Jak często wymieniać płyn hamulcowy?',
+    a: 'Płyn hamulcowy należy wymieniać co 2 lata lub 40 000 km (co nastąpi wcześniej), ponieważ absorbuje wilgoć i traci właściwości w wysokich temperaturach. Mokry płyn hamulcowy może powodować parowanie w układzie i utratę skuteczności hamowania.'
+  },
+  {
+    q: 'Czy układ hamulcowy można sprawdzić bezpłatnie?',
+    a: 'Tak — przy okazji wymiany opon lub innej usługi sprawdzamy wizualnie stan klocków i tarcz bez dodatkowych opłat. Jeśli potrzebujesz dokładnej oceny stanu hamulców, umów się na inspekcję — wyceniamy ją od 0 PLN przy zleceniu naprawy.'
+  },
+  {
+    q: 'Ile trwa naprawa hamulców?',
+    a: 'Wymiana klocków na jednej osi trwa około 1 godziny. Wymiana klocków i tarcz na obu osiach: 2–3 godziny. Naprawa bardziej złożona (przewody, zaciski, pompa) może trwać 3–5 godzin. Informujemy o czasie przy przyjęciu pojazdu.'
+  },
+];
+
+const schema = JSON.stringify([
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Naprawa Hamulców Toruń",
+    "provider": {
+      "@type": "AutoRepair",
+      "name": "D.JANC WORKSHOP",
+      "telephone": "+48451273483",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Toruńska 25",
+        "addressLocality": "Wielka Nieszawka",
+        "postalCode": "87-165",
+        "addressCountry": "PL"
+      }
+    },
+    "areaServed": [
+      {"@type": "City", "name": "Toruń"},
+      {"@type": "Place", "name": "Wielka Nieszawka"}
+    ],
+    "offers": {
+      "@type": "Offer",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": "200",
+        "priceCurrency": "PLN"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {"@type": "Answer", "text": item.a}
+    }))
+  }
+]);
+---
+<Layout
+  title="Naprawa Hamulców Toruń | D.JANC WORKSHOP — Wielka Nieszawka"
+  description="Naprawa hamulców w Toruniu — klocki od 200 PLN, tarcze od 300 PLN, komplet od 600 PLN. Hamulce to bezpieczeństwo — nie odkładaj. ul. Toruńska 25. Tel: 451-273-483."
+  schema={schema}
+>
+  <section class="bg-[#1a2332] text-white py-12 px-4">
+    <div class="max-w-4xl mx-auto">
+      <nav class="text-sm text-gray-400 mb-4">
+        <a href="/" class="hover:text-white">Strona główna</a> &rsaquo;
+        <a href="/uslugi" class="hover:text-white">Usługi</a> &rsaquo;
+        <span class="text-gray-300">Naprawa Hamulców</span>
+      </nav>
+      <h1 class="text-3xl md:text-4xl font-bold mb-3">Naprawa Hamulców Toruń</h1>
+      <p class="text-gray-300">Klocki, tarcze, płyn hamulcowy, przewody · ul. Toruńska 25, Wielka Nieszawka</p>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-4 py-10">
+
+    <!-- SAFETY MESSAGING -->
+    <section class="mb-6 bg-red-50 border border-red-200 rounded-xl p-4">
+      <p class="text-red-800 font-bold text-sm">
+        🛑 <strong>Hamulce to bezpieczeństwo — nie odkładaj naprawy.</strong> Zużyte klocki lub uszkodzone tarcze to realne zagrożenie dla Ciebie i innych uczestników ruchu. Zadzwoń natychmiast: <a href="tel:+48451273483" class="underline">451-273-483</a>
+      </p>
+    </section>
+
+    <section class="mb-10 bg-[#fff3f0] border-l-4 border-[#e17055] p-6 rounded-r-xl">
+      <p class="text-gray-800 leading-relaxed text-lg">
+        <strong>Naprawa hamulców w D.JANC WORKSHOP od 200 PLN</strong> (wymiana klocków, bez kosztu części). Tarcze hamulcowe od 300 PLN za oś. Komplet klocki + tarcze przód i tył od 600 PLN robocizny. Obsługujemy wszystkie marki. Kosztorys podajemy przed naprawą.
+      </p>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-4">Zakres usług naprawy hamulców</h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {[
+          'Wymiana klocków hamulcowych (przód i/lub tył)',
+          'Wymiana tarcz hamulcowych',
+          'Wymiana bębnów i szczęk hamulcowych',
+          'Wymiana płynu hamulcowego',
+          'Wymiana i naprawa przewodów hamulcowych',
+          'Wymiana i regeneracja zacisków hamulcowych',
+          'Naprawa pompy hamulcowej',
+          'Odpowietrzanie układu hamulcowego',
+          'Regulacja hamulca postojowego',
+          'Diagnostyka układu ABS i ESP',
+        ].map(item => (
+          <li class="flex items-start gap-2 text-sm text-gray-700">
+            <span class="text-[#e17055] font-bold mt-0.5">✓</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-4">Nasz proces naprawy hamulców</h2>
+      <ol class="space-y-4">
+        {[
+          {step: '1', title: 'Ocena stanu hamulców', desc: 'Sprawdzamy grubość klocków, stan tarcz (bruzdy, pęknięcia, grubość), działanie zacisków i przewodów.'},
+          {step: '2', title: 'Kosztorys naprawy', desc: 'Przedstawiamy kosztorys z wyszczególnieniem: robocizna + koszt części (klocki/tarcze). Ty decydujesz.'},
+          {step: '3', title: 'Wymiana elementów', desc: 'Wymieniamy uszkodzone elementy. Smarujemy prowadnice zacisków, dokładamy klocki hamulcowe.'},
+          {step: '4', title: 'Odpowietrzanie układu', desc: 'Odpowietrzamy układ hamulcowy i sprawdzamy szczelność. W razie potrzeby wymieniamy płyn hamulcowy.'},
+          {step: '5', title: 'Test hamowania', desc: 'Przeprowadzamy test hamowania i sprawdzamy, czy pedał hamulca jest twardy i pewny. Jazda próbna.'},
+        ].map(p => (
+          <li class="flex gap-4 items-start">
+            <span class="flex-shrink-0 w-9 h-9 rounded-full bg-[#e17055] text-white font-bold flex items-center justify-center text-sm">{p.step}</span>
+            <div>
+              <p class="font-bold text-[#1a2332]">{p.title}</p>
+              <p class="text-sm text-gray-600">{p.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-4">Cennik naprawy hamulców</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-[#1a2332] text-white">
+              <th class="text-left px-4 py-3">Usługa</th>
+              <th class="text-right px-4 py-3">Cena (robocizna)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Wymiana klocków hamulcowych (1 oś)', 'od 200 PLN'],
+              ['Wymiana tarcz hamulcowych (1 oś)', 'od 300 PLN'],
+              ['Klocki + tarcze (1 oś)', 'od 350 PLN'],
+              ['Komplet klocki + tarcze (przód + tył)', 'od 600 PLN'],
+              ['Wymiana płynu hamulcowego', 'od 100 PLN'],
+              ['Wymiana szczęk bębnowych', 'od 150 PLN'],
+              ['Naprawa/wymiana zacisku', 'od 200 PLN'],
+            ].map(([usluga, cena]) => (
+              <tr class="border-b border-gray-200 even:bg-[#f8f9fa]">
+                <td class="px-4 py-3 text-gray-700">{usluga}</td>
+                <td class="px-4 py-3 text-right font-bold text-[#e17055]">{cena}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-gray-400 mt-2">Ceny za robociznę, bez kosztu części. Dokładna wycena po oględzinach. Tel: <a href="tel:+48451273483" class="text-[#e17055]">451-273-483</a></p>
+    </section>
+
+    <section class="mb-10 bg-[#f8f9fa] rounded-xl p-6">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-4">Dlaczego warto wybrać D.JANC WORKSHOP?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {[
+          {icon: '🛡️', title: 'Bezpieczeństwo przede wszystkim', desc: 'Nie kompromitujemy na jakości — używamy sprawdzonych części renomowanych producentów.'},
+          {icon: '📋', title: 'Kosztorys przed naprawą', desc: 'Zawsze znasz cenę przed rozpoczęciem naprawy. Akceptujesz lub rezygnujesz — Twój wybór.'},
+          {icon: '✅', title: 'Gwarancja', desc: 'Udzielamy gwarancji na wymienione części i wykonaną robociznę.'},
+        ].map(item => (
+          <div class="text-center">
+            <div class="text-3xl mb-2">{item.icon}</div>
+            <h3 class="font-bold text-[#1a2332] mb-1">{item.title}</h3>
+            <p class="text-sm text-gray-600">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-6">Często zadawane pytania — hamulce</h2>
+      <div class="space-y-4">
+        {faqItems.map(item => (
+          <details class="border border-gray-200 rounded-xl overflow-hidden">
+            <summary class="px-5 py-4 font-bold text-[#1a2332] cursor-pointer hover:bg-[#f8f9fa] list-none flex justify-between items-center">
+              <span>{item.q}</span>
+              <span class="text-[#e17055] ml-2 flex-shrink-0">▼</span>
+            </summary>
+            <div class="px-5 py-4 text-sm text-gray-700 border-t border-gray-100">{item.a}</div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-10 bg-[#1a2332] text-white rounded-xl p-8 text-center">
+      <h2 class="text-2xl font-bold mb-3">Nie zwlekaj z naprawą hamulców</h2>
+      <p class="text-gray-300 mb-6">Zadzwoń teraz — umówimy termin, podamy cenę przed naprawą.</p>
+      <a href="tel:+48451273483"
+         class="inline-block bg-[#e17055] text-white px-10 py-4 rounded font-bold text-lg hover:bg-[#c0392b] transition-colors">
+        Zadzwoń Teraz: 451-273-483
+      </a>
+    </section>
+
+    <section>
+      <div class="rounded-xl overflow-hidden shadow-md">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2400.0!2d18.5833!3d53.0500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zVG9ydcWEc2thIDI1LCBXaWVsa2EgTmllc3phd2th!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
+          width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="D.JANC WORKSHOP na mapie">
+        </iframe>
+      </div>
+      <p class="text-sm text-gray-500 mt-2">ul. Toruńska 25, 87-165 Wielka Nieszawka — 7 km od centrum Torunia</p>
+    </section>
+  </div>
+</Layout>

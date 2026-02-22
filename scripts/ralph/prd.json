@@ -19,8 +19,19 @@
     "tel_href": "tel:+48451273483",
     "latitude": "53.0500",
     "longitude": "18.5833",
-    "services": ["Diagnostyka komputerowa", "Mechanika ogólna", "Wulkanizacja", "Klimatyzacja samochodowa", "Wymiana oleju", "Naprawa hamulców"],
-    "area_served": ["Toruń", "Wielka Nieszawka", "powiat toruński"]
+    "services": [
+      "Diagnostyka komputerowa",
+      "Mechanika ogólna",
+      "Wulkanizacja",
+      "Klimatyzacja samochodowa",
+      "Wymiana oleju",
+      "Naprawa hamulców"
+    ],
+    "area_served": [
+      "Toruń",
+      "Wielka Nieszawka",
+      "powiat toruński"
+    ]
   },
   "design": {
     "colors": {
@@ -53,7 +64,9 @@
       "id": 2,
       "title": "Layout Components — Header + Footer",
       "priority": 2,
-      "depends_on": [1],
+      "depends_on": [
+        1
+      ],
       "description": "Build Layout.astro (with meta/schema slots, lang=pl, Open Graph, hreflang, canonical, GA4 placeholder). Build Header.astro (sticky, logo left, nav center, orange CTA button right). Build Footer.astro (3-column: NAP | service links | hours). Build CallToAction.astro (reusable orange button). All phone links must use href='tel:+48451273483'.",
       "acceptance_criteria": [
         "Header is sticky (position: sticky; top: 0)",
@@ -68,7 +81,10 @@
       "id": 3,
       "title": "Homepage (/)",
       "priority": 3,
-      "depends_on": [1, 2],
+      "depends_on": [
+        1,
+        2
+      ],
       "url": "/",
       "h1": "Warsztat samochodowy Wielka Nieszawka / Toruń",
       "meta_title": "Warsztat samochodowy Toruń | D.JANC WORKSHOP — Wielka Nieszawka",
@@ -90,7 +106,10 @@
       "id": 4,
       "title": "Contact Page (/kontakt)",
       "priority": 4,
-      "depends_on": [1, 2],
+      "depends_on": [
+        1,
+        2
+      ],
       "url": "/kontakt",
       "h1": "Kontakt — D.JANC WORKSHOP",
       "meta_title": "Kontakt | Warsztat samochodowy Wielka Nieszawka | D.JANC WORKSHOP",
@@ -109,7 +128,10 @@
       "id": 5,
       "title": "Services Hub (/uslugi)",
       "priority": 5,
-      "depends_on": [1, 2],
+      "depends_on": [
+        1,
+        2
+      ],
       "url": "/uslugi",
       "h1": "Nasze Usługi — Warsztat D.JANC WORKSHOP Toruń",
       "meta_title": "Usługi warsztatu samochodowego Toruń | D.JANC WORKSHOP",
@@ -128,7 +150,11 @@
       "id": 6,
       "title": "Diagnostyka Komputerowa Service Page",
       "priority": 6,
-      "depends_on": [1, 2, 5],
+      "depends_on": [
+        1,
+        2,
+        5
+      ],
       "url": "/uslugi/diagnostyka-komputerowa-torun",
       "h1": "Diagnostyka Komputerowa Toruń",
       "meta_title": "Diagnostyka Komputerowa Toruń | D.JANC WORKSHOP — Wielka Nieszawka",
@@ -144,13 +170,17 @@
         "JSON-LD Service schema with name, areaServed, price",
         "npm run build passes"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": 7,
       "title": "Mechanika Ogólna Service Page",
       "priority": 7,
-      "depends_on": [1, 2, 5],
+      "depends_on": [
+        1,
+        2,
+        5
+      ],
       "url": "/uslugi/mechanika-ogolna-torun",
       "h1": "Mechanika Ogólna Toruń",
       "meta_title": "Mechanika Ogólna Toruń | D.JANC WORKSHOP — Wielka Nieszawka",
@@ -162,13 +192,17 @@
         "FAQPage schema with min 5 Q&As",
         "npm run build passes"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": 8,
       "title": "Wulkanizacja Service Page",
       "priority": 8,
-      "depends_on": [1, 2, 5],
+      "depends_on": [
+        1,
+        2,
+        5
+      ],
       "url": "/uslugi/wulkanizacja-torun",
       "h1": "Wulkanizacja Toruń",
       "meta_title": "Wulkanizacja Toruń — Wymiana opon | D.JANC WORKSHOP Wielka Nieszawka",
@@ -183,13 +217,17 @@
         "FAQPage schema with min 5 Q&As",
         "npm run build passes"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": 9,
       "title": "Klimatyzacja Samochodowa Service Page",
       "priority": 9,
-      "depends_on": [1, 2, 5],
+      "depends_on": [
+        1,
+        2,
+        5
+      ],
       "url": "/uslugi/klimatyzacja-samochodowa-torun",
       "h1": "Klimatyzacja Samochodowa Toruń",
       "meta_title": "Klimatyzacja Samochodowa Toruń | D.JANC WORKSHOP — Wielka Nieszawka",
@@ -203,13 +241,17 @@
         "FAQPage schema min 5 Q&As",
         "npm run build passes"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": 10,
       "title": "Wymiana Oleju Service Page",
       "priority": 10,
-      "depends_on": [1, 2, 5],
+      "depends_on": [
+        1,
+        2,
+        5
+      ],
       "url": "/uslugi/wymiana-oleju-torun",
       "h1": "Wymiana Oleju Toruń",
       "meta_title": "Wymiana Oleju Toruń | D.JANC WORKSHOP — Wielka Nieszawka",
@@ -223,13 +265,17 @@
         "FAQPage schema min 5 Q&As",
         "npm run build passes"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": 11,
       "title": "Naprawa Hamulców Service Page",
       "priority": 11,
-      "depends_on": [1, 2, 5],
+      "depends_on": [
+        1,
+        2,
+        5
+      ],
       "url": "/uslugi/naprawa-hamulcow-torun",
       "h1": "Naprawa Hamulców Toruń",
       "meta_title": "Naprawa Hamulców Toruń | D.JANC WORKSHOP — Wielka Nieszawka",
@@ -244,13 +290,16 @@
         "FAQPage schema min 5 Q&As",
         "npm run build passes"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": 12,
       "title": "About Page (/o-nas)",
       "priority": 12,
-      "depends_on": [1, 2],
+      "depends_on": [
+        1,
+        2
+      ],
       "url": "/o-nas",
       "h1": "O Nas — D.JANC WORKSHOP",
       "meta_title": "O Nas | Warsztat samochodowy Wielka Nieszawka | D.JANC WORKSHOP",
@@ -267,7 +316,10 @@
       "id": 13,
       "title": "Pricing Page (/cennik)",
       "priority": 13,
-      "depends_on": [1, 2],
+      "depends_on": [
+        1,
+        2
+      ],
       "url": "/cennik",
       "h1": "Cennik Usług — D.JANC WORKSHOP Toruń",
       "meta_title": "Cennik Warsztatu Samochodowego Toruń | D.JANC WORKSHOP",
@@ -287,7 +339,10 @@
       "id": 14,
       "title": "FAQ Page (/faq)",
       "priority": 14,
-      "depends_on": [1, 2],
+      "depends_on": [
+        1,
+        2
+      ],
       "url": "/faq",
       "h1": "Najczęściej Zadawane Pytania — D.JANC WORKSHOP",
       "meta_title": "FAQ Warsztat Samochodowy Toruń | D.JANC WORKSHOP — Wielka Nieszawka",
@@ -306,7 +361,10 @@
       "id": 15,
       "title": "Blog Index (/blog)",
       "priority": 15,
-      "depends_on": [1, 2],
+      "depends_on": [
+        1,
+        2
+      ],
       "url": "/blog",
       "h1": "Blog — Porady Motoryzacyjne",
       "meta_title": "Blog Motoryzacyjny | D.JANC WORKSHOP — Warsztat Toruń",
@@ -323,7 +381,10 @@
       "id": 16,
       "title": "Reviews Page (/opinie)",
       "priority": 16,
-      "depends_on": [1, 2],
+      "depends_on": [
+        1,
+        2
+      ],
       "url": "/opinie",
       "h1": "Opinie Klientów — D.JANC WORKSHOP",
       "meta_title": "Opinie | Warsztat samochodowy Toruń | D.JANC WORKSHOP",
@@ -340,7 +401,22 @@
       "id": 17,
       "title": "Schema Validation Pass",
       "priority": 17,
-      "depends_on": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+      "depends_on": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
       "description": "Validate all JSON-LD across all 18 pages. Check: no parse errors, no missing required fields, consistent NAP data (name, telephone, address), all service pages have Service schema, /faq has FAQPage schema, homepage has LocalBusiness + AutoRepair. Fix any malformed JSON-LD. Verify postalCode is 87-165.",
       "acceptance_criteria": [
         "No JSON-LD parse errors in any page's <head>",
@@ -355,7 +431,9 @@
       "id": 18,
       "title": "sitemap.xml + robots.txt",
       "priority": 18,
-      "depends_on": [17],
+      "depends_on": [
+        17
+      ],
       "description": "Install Astro sitemap integration: npx astro add sitemap. Add @astrojs/sitemap to astro.config.mjs integrations. Create public/robots.txt with: User-agent: * Allow: / Sitemap: https://djanc.pl/sitemap-index.xml. Run npm run build and verify sitemap-index.xml contains all 18+ page URLs.",
       "acceptance_criteria": [
         "/sitemap-index.xml generated at build time",
