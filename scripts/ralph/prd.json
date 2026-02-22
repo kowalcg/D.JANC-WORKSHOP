@@ -441,7 +441,7 @@
         "/robots.txt allows all crawlers with correct sitemap URL",
         "npm run build passes with no errors"
       ],
-      "passes": false
+      "passes": true
     }
   ]
 }

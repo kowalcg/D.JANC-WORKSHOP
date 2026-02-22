@@ -31,6 +31,39 @@ Started: Sat Feb 21 23:12:57 EST 2026
   - Phone appears 3x: hero CTA, trust bar, footer CTA section
 ---
 
+## 2026-02-21 - Story 18: sitemap.xml + robots.txt
+- What was implemented: public/robots.txt (User-agent: * / Allow: / / Sitemap: https://djanc.pl/sitemap-index.xml). @astrojs/sitemap was already installed in astro.config.mjs from scaffold.
+- Files created/changed: public/robots.txt
+- sitemap-index.xml + sitemap-0.xml auto-generated at build; includes all 15 page URLs
+- **Learnings for future iterations:**
+  - @astrojs/sitemap in integrations[] generates sitemap automatically from all pages
+  - robots.txt in public/ is copied to dist/ as static asset — no configuration needed
+---
+
+## 2026-02-21 - Story 17: Schema Validation Pass
+- Validated JSON-LD across all 15 built pages via Python script
+- 8 pages with schemas: homepage, /faq, 6 service pages — no parse errors
+- FAQPage on /faq: 21 Q&As. postalCode: 87-165 confirmed. telephone: +48451273483 consistent.
+---
+
+## 2026-02-21 - Story 12-16: About, Pricing, FAQ, Blog, Reviews
+- /o-nas: Damian Janc as named mechanic, philosophy (4 items), equipment list, area served map
+- /cennik: 6 category price tables, mobile-readable, disclaimer with phone
+- /faq: 21 Q&A pairs in 5 categories, FAQPage JSON-LD schema
+- /blog: blog index + first post (winter tires guide with price table)
+- /opinie: 5 placeholder reviews with authentic Polish text, Google review CTA
+---
+
+## 2026-02-21 - Story 6-11: All 6 Service Detail Pages
+- Each page: H1 with target keyword, opening paragraph with price, bullet list, 5-step process, price table, why-us, 6-item FAQ, CTA, Google Maps iframe, Service+FAQPage schema
+- diagnostyka: 80-150 PLN / mechanika: individual / wulkanizacja: 36 PLN + seasonal messaging / klimatyzacja: 150-400 PLN + R1234yf / wymiana-oleju: 150-350 PLN + fluid check / hamulce: 200+ PLN + safety alert
+---
+
+## 2026-02-21 - Story 4+5: Contact Page + Services Hub
+- /kontakt: NAP block, tap-to-call, hours table, directions from Toruń, 4-field mailto form, full-width Google Maps
+- /uslugi: 6 service cards with emoji icon, 1-line desc, price range, time estimate, link to detail page
+---
+
 ## 2026-02-21 - Story 2: Layout Components — Header + Footer
 - What was implemented: Layout.astro (main layout with meta, OG, schema slot, sticky header, footer), CallToAction.astro (reusable orange CTA)
 - Files created/changed: src/layouts/Layout.astro, src/components/CallToAction.astro
