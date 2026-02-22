@@ -1,0 +1,228 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="Cennik Warsztatu Samochodowego Toruń | D.JANC WORKSHOP"
+  description="Sprawdź ceny usług w D.JANC WORKSHOP. Wymiana opon R16 od 144 zł. Diagnostyka od 80 zł. Wymiana oleju od 150 zł. ul. Toruńska 25, Wielka Nieszawka. Tel: 451-273-483."
+>
+  <section class="bg-[#1a2332] text-white py-12 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-3xl md:text-4xl font-bold mb-3">Cennik Usług — D.JANC WORKSHOP Toruń</h1>
+      <p class="text-gray-300">Orientacyjne ceny · ul. Toruńska 25, Wielka Nieszawka · Kosztorys zawsze przed naprawą</p>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-4 py-12">
+
+    <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
+      <p class="text-amber-800 text-sm font-medium">
+        ℹ️ <strong>Ceny orientacyjne.</strong> Dokładna wycena po oględzinach pojazdu. Kosztorys podajemy zawsze PRZED przystąpieniem do naprawy — płacisz dokładnie tyle, ile uzgodniono. Zadzwoń: <a href="tel:+48451273483" class="font-bold underline">451-273-483</a>
+      </p>
+    </div>
+
+    <!-- WULKANIZACJA / OPONY -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-[#1a2332] mb-4 flex items-center gap-2">
+        <span class="text-2xl">🛞</span> Wulkanizacja i wymiana opon
+      </h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-[#1a2332] text-white">
+              <th class="text-left px-4 py-3">Usługa</th>
+              <th class="text-right px-4 py-3">Cena</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Wymiana + wyważanie 1 opony R15-16 (felgi stalowe)', '36 zł/szt'],
+              ['Komplet 4 opon R15-16 (felgi stalowe)', '144 zł'],
+              ['Komplet 4 opon R15-16 (felgi aluminiowe)', '172 zł'],
+              ['Komplet 4 opon R17 (felgi stalowe)', '148 zł'],
+              ['Komplet 4 opon R17 (felgi aluminiowe)', '192 zł'],
+              ['Naprawa opony (wulkanizacja)', 'od 61 zł'],
+              ['Przechowywanie opon między sezonami (4 szt)', 'od 93 zł/sezon'],
+              ['Wymiana zaworu', '10 zł/szt'],
+            ].map(([usluga, cena]) => (
+              <tr class="border-b border-gray-100 even:bg-[#f8f9fa]">
+                <td class="px-4 py-3 text-gray-700">{usluga}</td>
+                <td class="px-4 py-3 text-right font-bold text-[#e17055]">{cena}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- OLEJ I FILTRY -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-[#1a2332] mb-4 flex items-center gap-2">
+        <span class="text-2xl">🛢️</span> Wymiana oleju i filtry
+      </h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-[#1a2332] text-white">
+              <th class="text-left px-4 py-3">Usługa</th>
+              <th class="text-right px-4 py-3">Cena</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Olej mineralny + filtr + robocizna', 'od 150 zł'],
+              ['Olej półsyntetyczny + filtr + robocizna', 'od 200 zł'],
+              ['Olej syntetyczny + filtr + robocizna', 'od 250 zł'],
+              ['Olej do diesla DPF/Longlife + filtr', 'od 280 zł'],
+              ['Wymiana oleju (tylko robocizna, własny olej)', 'od 60 zł'],
+              ['Wymiana filtra powietrza', 'od 40 zł + część'],
+              ['Wymiana filtra kabinowego', 'od 40 zł + część'],
+            ].map(([usluga, cena]) => (
+              <tr class="border-b border-gray-100 even:bg-[#f8f9fa]">
+                <td class="px-4 py-3 text-gray-700">{usluga}</td>
+                <td class="px-4 py-3 text-right font-bold text-[#e17055]">{cena}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- DIAGNOSTYKA -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-[#1a2332] mb-4 flex items-center gap-2">
+        <span class="text-2xl">🔌</span> Diagnostyka komputerowa
+      </h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-[#1a2332] text-white">
+              <th class="text-left px-4 py-3">Usługa</th>
+              <th class="text-right px-4 py-3">Cena</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Podstawowy odczyt kodów błędów OBD', 'od 80 zł'],
+              ['Pełna diagnostyka wieloukładowa', '120–150 zł'],
+              ['Diagnostyka + kasowanie błędów', 'od 80 zł'],
+              ['Test parametrów live (podczas jazdy)', 'od 100 zł'],
+            ].map(([usluga, cena]) => (
+              <tr class="border-b border-gray-100 even:bg-[#f8f9fa]">
+                <td class="px-4 py-3 text-gray-700">{usluga}</td>
+                <td class="px-4 py-3 text-right font-bold text-[#e17055]">{cena}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- KLIMATYZACJA -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-[#1a2332] mb-4 flex items-center gap-2">
+        <span class="text-2xl">❄️</span> Klimatyzacja samochodowa
+      </h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-[#1a2332] text-white">
+              <th class="text-left px-4 py-3">Usługa</th>
+              <th class="text-right px-4 py-3">Cena</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Serwis klimatyzacji (napełnienie R134a)', 'od 150 zł'],
+              ['Serwis klimatyzacji (napełnienie R1234yf)', 'od 250 zł'],
+              ['Dezynfekcja układu klimatyzacji', 'od 80 zł'],
+              ['Serwis + dezynfekcja (pakiet)', 'od 200 zł'],
+              ['Naprawa układu (sprężarka, skraplacz)', 'wycena ind.'],
+            ].map(([usluga, cena]) => (
+              <tr class="border-b border-gray-100 even:bg-[#f8f9fa]">
+                <td class="px-4 py-3 text-gray-700">{usluga}</td>
+                <td class="px-4 py-3 text-right font-bold text-[#e17055]">{cena}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- HAMULCE -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-[#1a2332] mb-4 flex items-center gap-2">
+        <span class="text-2xl">🛑</span> Naprawa hamulców
+      </h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-[#1a2332] text-white">
+              <th class="text-left px-4 py-3">Usługa</th>
+              <th class="text-right px-4 py-3">Cena (robocizna)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Wymiana klocków hamulcowych (1 oś)', 'od 200 zł'],
+              ['Wymiana tarcz hamulcowych (1 oś)', 'od 300 zł'],
+              ['Klocki + tarcze (1 oś)', 'od 350 zł'],
+              ['Komplet klocki + tarcze (przód + tył)', 'od 600 zł'],
+              ['Wymiana płynu hamulcowego', 'od 100 zł'],
+              ['Wymiana szczęk bębnowych', 'od 150 zł'],
+            ].map(([usluga, cena]) => (
+              <tr class="border-b border-gray-100 even:bg-[#f8f9fa]">
+                <td class="px-4 py-3 text-gray-700">{usluga}</td>
+                <td class="px-4 py-3 text-right font-bold text-[#e17055]">{cena}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- GEOMETRIA / INNE -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-[#1a2332] mb-4 flex items-center gap-2">
+        <span class="text-2xl">🔧</span> Geometria i inne usługi
+      </h2>
+      <div class="overflow-x-auto rounded-xl border border-gray-200">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="bg-[#1a2332] text-white">
+              <th class="text-left px-4 py-3">Usługa</th>
+              <th class="text-right px-4 py-3">Cena</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Geometria kół (ustawienie zbieżności)', 'od 95 zł'],
+              ['Przegląd serwisowy', 'od 80 zł'],
+              ['Wymiana paska rozrządu (robocizna)', 'od 200 zł'],
+              ['Wymiana sprzęgła (robocizna)', 'od 350 zł'],
+              ['Wymiana amortyzatora (robocizna/szt)', 'od 100 zł'],
+            ].map(([usluga, cena]) => (
+              <tr class="border-b border-gray-100 even:bg-[#f8f9fa]">
+                <td class="px-4 py-3 text-gray-700">{usluga}</td>
+                <td class="px-4 py-3 text-right font-bold text-[#e17055]">{cena}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- DISCLAIMER + CTA -->
+    <section class="bg-[#f8f9fa] border border-gray-200 rounded-xl p-6 mb-8">
+      <p class="text-gray-600 text-sm">
+        <strong>Ceny orientacyjne.</strong> Ostateczna cena jest ustalana po bezpłatnych oględzinach pojazdu i podawana w formie kosztorysu przed naprawą. Ceny robocizny nie obejmują kosztu części zamiennych. Zadzwoń po indywidualną wycenę.
+      </p>
+    </section>
+
+    <div class="text-center">
+      <a href="tel:+48451273483"
+         class="inline-block bg-[#e17055] text-white px-10 py-4 rounded font-bold text-lg hover:bg-[#c0392b] transition-colors">
+        Zadzwoń po wycenę: 451-273-483
+      </a>
+    </div>
+  </div>
+</Layout>

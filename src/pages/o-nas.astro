@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="O Nas | Warsztat samochodowy Wielka Nieszawka | D.JANC WORKSHOP"
+  description="D.JANC WORKSHOP — uczciwy warsztat samochodowy przy ul. Toruńskiej 25 w Wielkiej Nieszawce. Damian Janc — właściciel i główny mechanik. Wszystkie marki. Tel: 451-273-483."
+>
+  <section class="bg-[#1a2332] text-white py-12 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-3xl md:text-4xl font-bold mb-3">O Nas — D.JANC WORKSHOP</h1>
+      <p class="text-gray-300">Uczciwy warsztat samochodowy w Wielkiej Nieszawce koło Torunia</p>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-4 py-12">
+
+    <!-- MECHANIK -->
+    <section class="mb-12">
+      <div class="bg-[#f8f9fa] rounded-2xl p-8">
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+          <div class="flex-shrink-0 w-32 h-32 bg-[#1a2332] rounded-full flex items-center justify-center text-6xl">
+            🔧
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-[#1a2332] mb-1">Damian Janc</h2>
+            <p class="text-[#e17055] font-medium mb-4">Właściciel i główny mechanik · D.JANC WORKSHOP</p>
+            <p class="text-gray-700 leading-relaxed mb-3">
+              Damian Janc to doświadczony mechanik samochodowy z wieloletnią praktyką w naprawach pojazdów osobowych i dostawczych wszystkich marek. Założył D.JANC WORKSHOP w Wielkiej Nieszawce, by oferować mieszkańcom Torunia i okolic profesjonalny serwis w przystępnych cenach.
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+              Filozofia Damiana jest prosta: <strong>„Naprawiamy tylko to, co rzeczywiście potrzeba. Cena jest znana przed naprawą. Żadnych niespodzianek."</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILOZOFIA -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-6">Nasza filozofia</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          {
+            icon: '💰',
+            title: 'Transparentne ceny',
+            desc: 'Przed każdą naprawą otrzymujesz szczegółowy kosztorys z wyszczególnieniem robocizny i części. Tylko po Twojej akceptacji przystępujemy do pracy. Żadnych ukrytych opłat — płacisz dokładnie to, co uzgodniono.'
+          },
+          {
+            icon: '🔍',
+            title: 'Naprawiamy tylko to, co potrzeba',
+            desc: 'Nie naprawiamy "na wszelki wypadek". Jeśli coś działa prawidłowo — nie ruszamy tego. Naszym celem jest rozwiązanie Twojego problemu, nie powiększanie rachunku.'
+          },
+          {
+            icon: '🚗',
+            title: 'Wszystkie marki',
+            desc: 'Obsługujemy samochody wszystkich europejskich, azjatyckich i amerykańskich marek: Volkswagen, Toyota, Ford, Opel, BMW, Audi, Mercedes, Renault, Peugeot, Skoda, Hyundai, Kia i inne.'
+          },
+          {
+            icon: '🤝',
+            title: 'Długoterminowe relacje',
+            desc: 'Zależy nam na tym, żebyś wracał. Uczciwa wycena i rzetelna naprawa to fundamenty, na których budujemy zaufanie z każdym klientem z Torunia, Wielkiej Nieszawki i okolic.'
+          },
+        ].map(item => (
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <div class="text-3xl mb-3">{item.icon}</div>
+            <h3 class="font-bold text-[#1a2332] mb-2">{item.title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- WYPOSAŻENIE -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-6">Wyposażenie warsztatu</h2>
+      <p class="text-gray-600 mb-6">Pracujemy na profesjonalnym sprzęcie diagnostycznym i naprawczym, który pozwala obsługiwać pojazdy wszystkich marek i roczników.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {[
+          'Profesjonalny skaner diagnostyczny OBD (wielomarkowy)',
+          'Wyważarka kół cyfrowa',
+          'Montażownica do opon (wszystkie rozmiary)',
+          'Stacja serwisowa klimatyzacji (R134a + R1234yf)',
+          'Podnośniki hydrauliczne i kanał',
+          'Zestaw kluczy momentowych (kalibrowane)',
+          'Urządzenie do odpowietrzania hamulców',
+          'Urządzenie do wymiany płynu hamulcowego',
+        ].map(item => (
+          <div class="flex items-start gap-2 text-sm text-gray-700">
+            <span class="text-[#e17055] font-bold mt-0.5">✓</span>
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- AREA SERVED -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-4">Obszar obsługi</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        D.JANC WORKSHOP mieści się przy <strong>ul. Toruńskiej 25 w Wielkiej Nieszawce</strong> (87-165), zaledwie 7 km od centrum Torunia. Obsługujemy klientów z całego powiatu toruńskiego, w tym:
+      </p>
+      <div class="flex flex-wrap gap-2">
+        {['Toruń', 'Wielka Nieszawka', 'Mała Nieszawka', 'Cierpice', 'Czerniewice', 'Lubicz', 'Obrowo', 'powiat toruński'].map(miejsce => (
+          <span class="bg-[#f8f9fa] border border-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">{miejsce}</span>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-[#1a2332] text-white rounded-xl p-8 text-center">
+      <h2 class="text-2xl font-bold mb-3">Umów wizytę w D.JANC WORKSHOP</h2>
+      <p class="text-gray-300 mb-2">ul. Toruńska 25, Wielka Nieszawka · Pon–Pt: 8:00–17:00 · Sob: 8:00–13:00</p>
+      <p class="text-gray-300 mb-6">Zadzwoń — podamy cenę przed naprawą i umówimy termin.</p>
+      <a href="tel:+48451273483"
+         class="inline-block bg-[#e17055] text-white px-10 py-4 rounded font-bold text-lg hover:bg-[#c0392b] transition-colors">
+        Zadzwoń: 451-273-483
+      </a>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqCategories = [
+  {
+    category: 'Ceny i płatności',
+    items: [
+      {
+        q: 'Ile kosztuje diagnostyka komputerowa?',
+        a: 'Diagnostyka komputerowa OBD w D.JANC WORKSHOP kosztuje od 80 do 150 PLN. Podstawowy odczyt kodów błędów to 80 PLN. Pełna diagnoza wieloukładowa to 120–150 PLN.'
+      },
+      {
+        q: 'Ile kosztuje wymiana oleju?',
+        a: 'Wymiana oleju silnikowego z filtrem kosztuje od 150 do 350 PLN w zależności od rodzaju oleju (mineralny/półsyntetyczny/syntetyczny) i pojemności silnika. Olej mineralny od 150 PLN, syntetyczny od 250 PLN.'
+      },
+      {
+        q: 'Ile kosztuje wymiana opon R16?',
+        a: 'Wymiana kompletu 4 opon R15-16 na felgach stalowych kosztuje 144 PLN (36 PLN/szt + wyważanie). Na felgach aluminiowych to 172 PLN. R17 stalowe: 148 PLN, R17 alu: 192 PLN.'
+      },
+      {
+        q: 'Ile kosztuje serwis klimatyzacji?',
+        a: 'Serwis klimatyzacji z napełnieniem czynnikiem R134a to od 150 PLN. Z czynnikiem R1234yf (nowsze samochody) od 250 PLN. Dezynfekcja układu od 80 PLN. Pakiet serwis + dezynfekcja od 200 PLN.'
+      },
+      {
+        q: 'Czy płacę tylko za naprawę, której się zdecyduję?',
+        a: 'Tak — zawsze przedstawiamy kosztorys przed naprawą. Dopiero po Twojej akceptacji przystępujemy do pracy. Możesz zobaczyć diagnozę i zdecydować, czy naprawę zlecasz nam, czy chcesz to przemyśleć.'
+      },
+    ]
+  },
+  {
+    category: 'Proces i zaufanie',
+    items: [
+      {
+        q: 'Czy dostanę kosztorys przed naprawą?',
+        a: 'Tak — to nasza podstawowa zasada. Zawsze przedstawiamy szczegółowy kosztorys (robocizna + koszt części) zanim cokolwiek zaczniemy naprawiać. Płacisz dokładnie tyle, ile uzgodniono — żadnych niespodzianek.'
+      },
+      {
+        q: 'Jak przebiega naprawa w D.JANC WORKSHOP?',
+        a: 'Przyjmujemy pojazd → diagnozujemy problem → przedstawiamy kosztorys → Ty akceptujesz → naprawiamy → oddajemy gotowy samochód. Wszystko jest omawiane transparentnie na każdym etapie.'
+      },
+      {
+        q: 'Czy naprawiacie wszystkie marki samochodów?',
+        a: 'Tak — obsługujemy wszystkie popularne marki samochodów osobowych i dostawczych: Volkswagen, Toyota, Ford, Opel, BMW, Audi, Mercedes, Renault, Peugeot, Skoda, Hyundai, Kia, Seat, Citroen, Fiat, Volvo, Suzuki i inne.'
+      },
+      {
+        q: 'Czy używacie oryginalnych części zamiennych?',
+        a: 'Oferujemy zarówno oryginalne części OEM jak i wysokiej jakości zamienniki renomowanych producentów (Bosch, NGK, Sachs, LuK, ATE, TRW). Wybór należy do klienta — prezentujemy obie opcje z cenami przed naprawą.'
+      },
+      {
+        q: 'Czy udzielacie gwarancji na naprawy?',
+        a: 'Tak — udzielamy gwarancji na wykonane naprawy i zamontowane części zamienne. Warunki gwarancji podajemy przy odbiorze pojazdu.'
+      },
+      {
+        q: 'Czy mogę zostawić samochód i odebrać go po pracy?',
+        a: 'Tak — możesz zostawić samochód rano i odebrać go po zakończeniu pracy. Zadzwonimy gdy auto będzie gotowe. Prosimy o wcześniejsze umówienie terminu telefonicznie.'
+      },
+    ]
+  },
+  {
+    category: 'Lokalizacja i godziny',
+    items: [
+      {
+        q: 'Gdzie jesteście — jak dojechać?',
+        a: 'D.JANC WORKSHOP mieści się przy ul. Toruńskiej 25 w Wielkiej Nieszawce (87-165), 7 km od centrum Torunia. Jedź drogą krajową nr 91 na północ od Torunia, skręć w ul. Toruńską w kierunku Wielkiej Nieszawki. Bezpłatny parking przed warsztatem.'
+      },
+      {
+        q: 'Jakie są godziny otwarcia warsztatu?',
+        a: 'Pracujemy od poniedziałku do piątku w godzinach 8:00–17:00 oraz w soboty od 8:00 do 13:00. W niedzielę jesteśmy zamknięci. Na wizyty poza standardowymi godzinami — zadzwoń i uzgodnimy termin.'
+      },
+      {
+        q: 'Czy pracujecie w soboty?',
+        a: 'Tak — w soboty jesteśmy otwarci w godzinach 8:00–13:00. W szczytowych sezonach wymiany opon (październik/listopad i marzec/kwiecień) zalecamy wcześniejsze umówienie terminu.'
+      },
+      {
+        q: 'Jak daleko jesteście od centrum Torunia?',
+        a: 'Warsztat znajduje się 7 km od centrum Torunia — w spokojnej miejscowości Wielka Nieszawka przy ul. Toruńskiej 25. Dojazd samochodem trwa około 10 minut. Bezpłatny parking.'
+      },
+    ]
+  },
+  {
+    category: 'Sezonowe — opony',
+    items: [
+      {
+        q: 'Kiedy wymieniać opony na zimowe?',
+        a: 'Opony zimowe należy założyć gdy temperatura regularnie spada poniżej +7°C — zwykle w październiku lub listopadzie. W Polsce zaleca się wymianę przed 1 listopada. Opony zimowe na zimnie mają znacznie lepszą przyczepność niż letnie.'
+      },
+      {
+        q: 'Kiedy wymieniać opony zimowe na letnie?',
+        a: 'Opony letnie zakłada się gdy temperatura jest trwale powyżej +7°C — zazwyczaj w marcu lub na początku kwietnia. Nie zakładaj opon letnich gdy mogą jeszcze wystąpić przymrozki lub oblodzenie.'
+      },
+      {
+        q: 'Czy przechowujecie opony między sezonami?',
+        a: 'Tak — oferujemy przechowywanie opon (4 szt) między sezonami od 93 PLN za sezon. Opony są przechowywane w odpowiednich warunkach. Przy sezonowej wymianie odbiory zapakowane i gotowe do montażu.'
+      },
+      {
+        q: 'Czy trzeba rezerwować termin na wymianę opon?',
+        a: 'W szczycie sezonu (październik/listopad i marzec/kwiecień) terminy mogą być zajęte nawet na kilka dni. Zalecamy zadzwonić z wyprzedzeniem. Poza sezonem zazwyczaj przyjmujemy od razu lub tego samego dnia.'
+      },
+    ]
+  },
+  {
+    category: 'Bezpieczeństwo — hamulce',
+    items: [
+      {
+        q: 'Jak sprawdzić, czy klocki hamulcowe są zużyte?',
+        a: 'Sygnały wymiany klocków: piszczący dźwięk przy hamowaniu (wskaźnik zużycia), dłuższa droga hamowania, wibracje przy hamowaniu, auto skręca przy hamowaniu, zapalona lampka ABS. Nie czekaj — zadzwoń: 451-273-483.'
+      },
+      {
+        q: 'Jak często wymieniać płyn hamulcowy?',
+        a: 'Płyn hamulcowy wymienia się co 2 lata lub 40 000 km. Płyn absorbuje wilgoć i w wysokich temperaturach może się zagotować, powodując utratę skuteczności hamowania. Wymiana kosztuje od 100 PLN.'
+      },
+    ]
+  }
+];
+
+const allFaqItems = faqCategories.flatMap(cat => cat.items);
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": allFaqItems.map(item => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.a
+    }
+  }))
+});
+---
+<Layout
+  title="FAQ Warsztat Samochodowy Toruń | D.JANC WORKSHOP — Wielka Nieszawka"
+  description="Odpowiedzi na najczęstsze pytania o D.JANC WORKSHOP. Ceny, godziny, lokalizacja, proces naprawy, hamulce, opony. ul. Toruńska 25, Wielka Nieszawka. Tel: 451-273-483."
+  schema={schema}
+>
+  <section class="bg-[#1a2332] text-white py-12 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-3xl md:text-4xl font-bold mb-3">Najczęściej Zadawane Pytania — D.JANC WORKSHOP</h1>
+      <p class="text-gray-300">Odpowiedzi na pytania o ceny, usługi, lokalizację i proces naprawy</p>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    {faqCategories.map(cat => (
+      <section class="mb-12">
+        <h2 class="text-xl font-bold text-[#1a2332] mb-5 pb-2 border-b-2 border-[#e17055]">{cat.category}</h2>
+        <div class="space-y-3">
+          {cat.items.map(item => (
+            <details class="border border-gray-200 rounded-xl overflow-hidden">
+              <summary class="px-5 py-4 font-bold text-[#1a2332] cursor-pointer hover:bg-[#f8f9fa] list-none flex justify-between items-center">
+                <span>{item.q}</span>
+                <span class="text-[#e17055] ml-2 flex-shrink-0">▼</span>
+              </summary>
+              <div class="px-5 py-4 text-sm text-gray-700 border-t border-gray-100 leading-relaxed">
+                {item.a}
+              </div>
+            </details>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <section class="bg-[#1a2332] text-white rounded-xl p-8 text-center">
+      <h2 class="text-2xl font-bold mb-3">Masz inne pytanie?</h2>
+      <p class="text-gray-300 mb-6">Zadzwoń bezpośrednio — odpowiemy na każde pytanie i podamy cenę przez telefon.</p>
+      <a href="tel:+48451273483"
+         class="inline-block bg-[#e17055] text-white px-10 py-4 rounded font-bold text-lg hover:bg-[#c0392b] transition-colors">
+        Zadzwoń: 451-273-483
+      </a>
+      <p class="text-gray-400 text-sm mt-4">ul. Toruńska 25, Wielka Nieszawka · Pon–Pt 8:00–17:00 · Sob 8:00–13:00</p>
+    </section>
+  </div>
+</Layout>

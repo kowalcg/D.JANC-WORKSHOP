@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const reviews = [
+  {
+    name: 'Marek W.',
+    rating: 5,
+    text: 'Byłem z awarią skrzyni biegów — Damian szybko zdiagnozował problem i przedstawił kosztorys jeszcze tego samego dnia. Cena była uczciwa, naprawa wykonana sprawnie. Polecam wszystkim z okolic Torunia.',
+    car: 'VW Golf, 2015',
+    date: 'styczeń 2026',
+  },
+  {
+    name: 'Katarzyna S.',
+    rating: 5,
+    text: 'Wymiana opon na zimowe — błyskawicznie, bez kolejki, cena taka jak podana przez telefon. Warsztat jest 7 km od centrum Torunia, ale warto! Na pewno wrócę na wiosnę.',
+    car: 'Toyota Yaris, 2019',
+    date: 'listopad 2025',
+  },
+  {
+    name: 'Tomasz R.',
+    rating: 5,
+    text: 'Diagnostyka komputerowa + naprawa czujnika tlenu. Wszystko sprawnie i bez zbędnych rozmów. Dostałem jasny kosztorys przed naprawą i zapłaciłem dokładnie tyle. Polecam D.JANC WORKSHOP.',
+    car: 'Opel Astra, 2016',
+    date: 'grudzień 2025',
+  },
+  {
+    name: 'Anna K.',
+    rating: 5,
+    text: 'Serwis klimatyzacji na lato — cena 150 zł, działa świetnie. Miła obsługa, sprawna realizacja. Zostałam poinformowana o stanie klimatyzacji i co trzeba było zrobić. Na pewno będę wracać.',
+    car: 'Ford Focus, 2018',
+    date: 'czerwiec 2025',
+  },
+  {
+    name: 'Piotr M.',
+    rating: 5,
+    text: 'Wymiana klocków i tarcz hamulcowych — kosztorys na miejscu, naprawa tego samego dnia. Hamulce działają jak nowe. Warsztat solidny, uczciwy, polecam wszystkim z powiatu toruńskiego.',
+    car: 'BMW Seria 3, 2014',
+    date: 'październik 2025',
+  },
+];
+---
+<Layout
+  title="Opinie | Warsztat samochodowy Toruń | D.JANC WORKSHOP"
+  description="Opinie klientów D.JANC WORKSHOP. Sprawdź co mówią kierowcy z Torunia i Wielkiej Nieszawki o naszym warsztacie. Zostaw swoją opinię na Google. Tel: 451-273-483."
+>
+  <section class="bg-[#1a2332] text-white py-12 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-3xl md:text-4xl font-bold mb-3">Opinie Klientów — D.JANC WORKSHOP</h1>
+      <p class="text-gray-300">Co mówią kierowcy z Torunia i okolic o naszym warsztacie</p>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-4 py-12">
+
+    <!-- INTRO -->
+    <section class="mb-10 text-center">
+      <div class="flex justify-center gap-1 mb-3 text-3xl">
+        {'★★★★★'}
+      </div>
+      <p class="text-gray-600">Opinie klientów D.JANC WORKSHOP · ul. Toruńska 25, Wielka Nieszawka</p>
+    </section>
+
+    <!-- REVIEWS GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      {reviews.map(review => (
+        <article class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+          <div class="flex justify-between items-start mb-3">
+            <div>
+              <p class="font-bold text-[#1a2332]">{review.name}</p>
+              <p class="text-xs text-gray-400">{review.car} · {review.date}</p>
+            </div>
+            <div class="text-[#e17055] text-lg tracking-tight">
+              {'★'.repeat(review.rating)}
+            </div>
+          </div>
+          <p class="text-sm text-gray-700 leading-relaxed">"{review.text}"</p>
+        </article>
+      ))}
+    </div>
+
+    <!-- GOOGLE REVIEW CTA -->
+    <section class="bg-[#f8f9fa] border border-gray-200 rounded-xl p-8 text-center mb-10">
+      <div class="text-4xl mb-3">⭐</div>
+      <h2 class="text-xl font-bold text-[#1a2332] mb-3">Byłeś u nas? Zostaw opinię!</h2>
+      <p class="text-gray-600 mb-6">
+        Twoja opinia pomaga innym kierowcom z Torunia i okolic znaleźć uczciwy warsztat. Jesteśmy wdzięczni za każdy komentarz.
+      </p>
+      <a
+        href="https://g.page/r/djanc-workshop/review"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block bg-[#e17055] text-white px-8 py-3 rounded font-bold hover:bg-[#c0392b] transition-colors">
+        Zostaw opinię na Google
+      </a>
+      <p class="text-xs text-gray-400 mt-3">Zostaniesz przekierowany do Google Business Profile</p>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-[#1a2332] text-white rounded-xl p-8 text-center">
+      <h2 class="text-xl font-bold mb-3">Chcesz zostać naszym klientem?</h2>
+      <p class="text-gray-300 mb-6">Zadzwoń — umówimy termin i podamy cenę przed naprawą.</p>
+      <a href="tel:+48451273483"
+         class="inline-block bg-[#e17055] text-white px-10 py-4 rounded font-bold text-lg hover:bg-[#c0392b] transition-colors">
+        Zadzwoń: 451-273-483
+      </a>
+    </section>
+  </div>
+</Layout>
