@@ -1,0 +1,368 @@
+{
+  "project": {
+    "name": "D.JANC WORKSHOP Website",
+    "description": "Polish-language auto mechanic website — Wielka Nieszawka / Toruń. Astro 4.x + Tailwind CSS + Vercel. Goal: local SEO dominance + AI search visibility.",
+    "tech_stack": "Astro 4.x, Tailwind CSS, Vercel",
+    "build_command": "npm run build",
+    "language": "Polish (pl)",
+    "domain": "djanc.pl",
+    "repo": "djanc-workshop"
+  },
+  "business": {
+    "name": "D.JANC WORKSHOP",
+    "address": "ul. Toruńska 25, Wielka Nieszawka",
+    "postal_code": "87-165",
+    "region": "kujawsko-pomorskie",
+    "phone": "+48451273483",
+    "phone_display": "451-273-483",
+    "tel_href": "tel:+48451273483",
+    "latitude": "53.0500",
+    "longitude": "18.5833",
+    "services": ["Diagnostyka komputerowa", "Mechanika ogólna", "Wulkanizacja", "Klimatyzacja samochodowa", "Wymiana oleju", "Naprawa hamulców"],
+    "area_served": ["Toruń", "Wielka Nieszawka", "powiat toruński"]
+  },
+  "design": {
+    "colors": {
+      "primary": "#1a2332",
+      "accent": "#e17055",
+      "bg": "#ffffff",
+      "bg_alt": "#f8f9fa",
+      "text": "#2d3436"
+    },
+    "mobile_first": true,
+    "sticky_header": true,
+    "cta_always_visible": true
+  },
+  "stories": [
+    {
+      "id": 1,
+      "title": "Project Scaffold",
+      "priority": 1,
+      "depends_on": [],
+      "description": "Initialize Astro 4.x project with Tailwind CSS. Create directory structure with layouts/, components/, pages/, public/, scripts/ralph/. Set astro.config.mjs output='static' and site='https://djanc.pl'. Run npm run build to verify.",
+      "acceptance_criteria": [
+        "npm run build completes with no errors",
+        "Directory structure includes src/layouts/, src/components/, src/pages/, public/, scripts/ralph/",
+        "Tailwind CSS installed and working",
+        "astro.config.mjs has output='static' and site='https://djanc.pl'"
+      ],
+      "passes": false
+    },
+    {
+      "id": 2,
+      "title": "Layout Components — Header + Footer",
+      "priority": 2,
+      "depends_on": [1],
+      "description": "Build Layout.astro (with meta/schema slots, lang=pl, Open Graph, hreflang, canonical, GA4 placeholder). Build Header.astro (sticky, logo left, nav center, orange CTA button right). Build Footer.astro (3-column: NAP | service links | hours). Build CallToAction.astro (reusable orange button). All phone links must use href='tel:+48451273483'.",
+      "acceptance_criteria": [
+        "Header is sticky (position: sticky; top: 0)",
+        "Phone link href='tel:+48451273483' is present and clickable",
+        "All Polish characters (ą ę ó ś ć ń ł ź ż) render correctly",
+        "Footer shows D.JANC WORKSHOP, ul. Toruńska 25, Wielka Nieszawka, +48 451 273 483",
+        "npm run build passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": 3,
+      "title": "Homepage (/)",
+      "priority": 3,
+      "depends_on": [1, 2],
+      "url": "/",
+      "h1": "Warsztat samochodowy Wielka Nieszawka / Toruń",
+      "meta_title": "Warsztat samochodowy Toruń | D.JANC WORKSHOP — Wielka Nieszawka",
+      "meta_description": "Warsztat samochodowy przy ul. Toruńskiej 25 w Wielkiej Nieszawce. Diagnostyka, mechanika, wulkanizacja, klimatyzacja. Zadzwoń: 451-273-483.",
+      "target_keyword": "warsztat samochodowy Toruń",
+      "description": "Build homepage with: Hero (H1 + subheadline 'Ceny znasz zanim przyjedziesz. Naprawa tylko tego, co potrzeba.' + orange CTA), Trust bar (address + phone), Services grid (6 cards linking to service pages), Why us (3 columns: transparent pricing / kosztorys przed naprawą / wszystkie marki), AI-quotable block paragraph, Google Maps iframe, CTA footer section. Add LocalBusiness + AutoRepair JSON-LD schema in <head>.",
+      "schema_type": "AutoRepair LocalBusiness",
+      "acceptance_criteria": [
+        "H1 = 'Warsztat samochodowy Wielka Nieszawka / Toruń'",
+        "Phone href='tel:+48451273483' appears minimum 3 times on page",
+        "LocalBusiness + AutoRepair JSON-LD schema present in <head>",
+        "Google Maps iframe loads for ul. Toruńska 25, Wielka Nieszawka",
+        "Mobile: no horizontal scroll, phone button visible above fold",
+        "npm run build passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": 4,
+      "title": "Contact Page (/kontakt)",
+      "priority": 4,
+      "depends_on": [1, 2],
+      "url": "/kontakt",
+      "h1": "Kontakt — D.JANC WORKSHOP",
+      "meta_title": "Kontakt | Warsztat samochodowy Wielka Nieszawka | D.JANC WORKSHOP",
+      "target_keyword": "kontakt warsztat Toruń",
+      "description": "Build contact page with: NAP block (address, tap-to-call phone, hours placeholder), Google Maps full-width iframe, directions section 'Jak dojechać z Torunia', contact form (Imię, Telefon, Marka auta, Opis problemu, Submit — mailto fallback), hours table (placeholder values).",
+      "acceptance_criteria": [
+        "H1 = 'Kontakt — D.JANC WORKSHOP'",
+        "Phone href='tel:+48451273483' visible and tappable",
+        "Google Maps iframe loads with address ul. Toruńska 25, Wielka Nieszawka",
+        "Contact form renders all 4 fields",
+        "npm run build passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": 5,
+      "title": "Services Hub (/uslugi)",
+      "priority": 5,
+      "depends_on": [1, 2],
+      "url": "/uslugi",
+      "h1": "Nasze Usługi — Warsztat D.JANC WORKSHOP Toruń",
+      "meta_title": "Usługi warsztatu samochodowego Toruń | D.JANC WORKSHOP",
+      "target_keyword": "usługi warsztatu Toruń",
+      "description": "Build services hub with 6 service cards. Each card: service name, 1-sentence description in Polish, price range in PLN, link to service detail page. Services: Diagnostyka komputerowa (od 80 PLN), Mechanika ogólna, Wulkanizacja (od 36 PLN/szt), Klimatyzacja (od 150 PLN), Wymiana oleju (od 150 PLN), Naprawa hamulców (od 200 PLN).",
+      "acceptance_criteria": [
+        "H1 = 'Nasze Usługi — Warsztat D.JANC WORKSHOP Toruń'",
+        "All 6 service card links resolve correctly (even if pages don't exist yet)",
+        "Each card shows price range in PLN",
+        "Phone number present",
+        "npm run build passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": 6,
+      "title": "Diagnostyka Komputerowa Service Page",
+      "priority": 6,
+      "depends_on": [1, 2, 5],
+      "url": "/uslugi/diagnostyka-komputerowa-torun",
+      "h1": "Diagnostyka Komputerowa Toruń",
+      "meta_title": "Diagnostyka Komputerowa Toruń | D.JANC WORKSHOP — Wielka Nieszawka",
+      "meta_description": "Diagnostyka komputerowa OBD w D.JANC WORKSHOP od 80 do 150 PLN. Odczyt kodów błędów, analiza układów elektronicznych. ul. Toruńska 25, Wielka Nieszawka. Tel: 451-273-483.",
+      "target_keyword": "diagnostyka komputerowa Toruń",
+      "price_range": "od 80 do 150 PLN",
+      "description": "Service page with 10 sections: (1) Opening paragraph with price — answer-first format starting with price and duration, (2) Co obejmuje diagnostyka (bullet list of what's included), (3) Nasz proces (numbered steps 1-5), (4) Czas trwania, (5) Cennik table, (6) Dlaczego warto, (7) FAQ section with min 5 Q&As, (8) CTA button Zadzwoń Teraz, (9) Google Maps embed, (10) JSON-LD Service + FAQPage schema in <head>.",
+      "acceptance_criteria": [
+        "H1 = 'Diagnostyka Komputerowa Toruń'",
+        "Opening paragraph contains price 'od 80 do 150 PLN'",
+        "Phone href='tel:+48451273483' present",
+        "JSON-LD FAQPage schema with minimum 5 Q&As in <head>",
+        "JSON-LD Service schema with name, areaServed, price",
+        "npm run build passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": 7,
+      "title": "Mechanika Ogólna Service Page",
+      "priority": 7,
+      "depends_on": [1, 2, 5],
+      "url": "/uslugi/mechanika-ogolna-torun",
+      "h1": "Mechanika Ogólna Toruń",
+      "meta_title": "Mechanika Ogólna Toruń | D.JANC WORKSHOP — Wielka Nieszawka",
+      "target_keyword": "mechanik Toruń",
+      "description": "Same 10-section template as Story 6. Cover: silnik, zawieszenie, skrzynia biegów, układ przeniesienia napędu, elektryka. Include FAQ min 5 Q&As. FAQPage + Service schema.",
+      "acceptance_criteria": [
+        "H1 = 'Mechanika Ogólna Toruń'",
+        "Phone href='tel:+48451273483' present",
+        "FAQPage schema with min 5 Q&As",
+        "npm run build passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": 8,
+      "title": "Wulkanizacja Service Page",
+      "priority": 8,
+      "depends_on": [1, 2, 5],
+      "url": "/uslugi/wulkanizacja-torun",
+      "h1": "Wulkanizacja Toruń",
+      "meta_title": "Wulkanizacja Toruń — Wymiana opon | D.JANC WORKSHOP Wielka Nieszawka",
+      "meta_description": "Wulkanizacja i wymiana opon w Toruniu od 36 PLN/szt. Komplet opon R16 od 144 PLN. Umów termin online. ul. Toruńska 25, Wielka Nieszawka. Tel: 451-273-483.",
+      "target_keyword": "wulkanizacja Toruń",
+      "price_range": "od 36 PLN/szt | komplet R16 od 144 PLN",
+      "description": "Same 10-section template. Include seasonal messaging: 'Sezonowa wymiana opon — umów termin z wyprzedzeniem'. Price table: wymiana R15-16 stalowe 144 zł/komplet, alu 172 zł/komplet, R17 stalowe 148 zł, R17 alu 192 zł, naprawa opony od 61 zł, przechowywanie od 93 zł/sezon. FAQ min 5 Q&As including 'Kiedy wymieniać opony na zimowe?'",
+      "acceptance_criteria": [
+        "H1 = 'Wulkanizacja Toruń'",
+        "Price table present with PLN values for multiple rim sizes",
+        "Phone href='tel:+48451273483' present",
+        "FAQPage schema with min 5 Q&As",
+        "npm run build passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": 9,
+      "title": "Klimatyzacja Samochodowa Service Page",
+      "priority": 9,
+      "depends_on": [1, 2, 5],
+      "url": "/uslugi/klimatyzacja-samochodowa-torun",
+      "h1": "Klimatyzacja Samochodowa Toruń",
+      "meta_title": "Klimatyzacja Samochodowa Toruń | D.JANC WORKSHOP — Wielka Nieszawka",
+      "target_keyword": "klimatyzacja samochodowa Toruń",
+      "price_range": "od 150 do 400 PLN",
+      "description": "Same 10-section template. Cover: serwis (przegląd + napełnienie czynnikiem), dezynfekcja, naprawa układu. Price: serwis klimatyzacji od 150 PLN, napełnienie czynnikiem od 150 PLN, dezynfekcja od 80 PLN. FAQ min 5 Q&As. FAQPage + Service schema.",
+      "acceptance_criteria": [
+        "H1 = 'Klimatyzacja Samochodowa Toruń'",
+        "Price in opening paragraph",
+        "Phone href='tel:+48451273483' present",
+        "FAQPage schema min 5 Q&As",
+        "npm run build passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": 10,
+      "title": "Wymiana Oleju Service Page",
+      "priority": 10,
+      "depends_on": [1, 2, 5],
+      "url": "/uslugi/wymiana-oleju-torun",
+      "h1": "Wymiana Oleju Toruń",
+      "meta_title": "Wymiana Oleju Toruń | D.JANC WORKSHOP — Wielka Nieszawka",
+      "target_keyword": "wymiana oleju Toruń",
+      "price_range": "od 150 do 350 PLN",
+      "description": "Same 10-section template. Explain price variation (mineralny vs syntetyczny, pojemność silnika). Include: filter replacement, fluid level check. Price: od 150 do 350 PLN depending on oil type. FAQ min 5 Q&As. FAQPage + Service schema.",
+      "acceptance_criteria": [
+        "H1 = 'Wymiana Oleju Toruń'",
+        "Price range 150-350 PLN in opening paragraph",
+        "Phone href='tel:+48451273483' present",
+        "FAQPage schema min 5 Q&As",
+        "npm run build passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": 11,
+      "title": "Naprawa Hamulców Service Page",
+      "priority": 11,
+      "depends_on": [1, 2, 5],
+      "url": "/uslugi/naprawa-hamulcow-torun",
+      "h1": "Naprawa Hamulców Toruń",
+      "meta_title": "Naprawa Hamulców Toruń | D.JANC WORKSHOP — Wielka Nieszawka",
+      "target_keyword": "naprawa hamulców Toruń",
+      "price_range": "od 200 PLN",
+      "description": "Same 10-section template. Cover: klocki hamulcowe, tarcze, płyn hamulcowy, przewody. Safety messaging: 'Hamulce to bezpieczeństwo — nie odkładaj naprawy'. Price: klocki od 200 PLN, tarcze od 300 PLN, komplet przód + tył od 600 PLN. FAQ min 5 Q&As. FAQPage + Service schema.",
+      "acceptance_criteria": [
+        "H1 = 'Naprawa Hamulców Toruń'",
+        "Safety messaging present",
+        "Price range in opening paragraph",
+        "Phone href='tel:+48451273483' present",
+        "FAQPage schema min 5 Q&As",
+        "npm run build passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": 12,
+      "title": "About Page (/o-nas)",
+      "priority": 12,
+      "depends_on": [1, 2],
+      "url": "/o-nas",
+      "h1": "O Nas — D.JANC WORKSHOP",
+      "meta_title": "O Nas | Warsztat samochodowy Wielka Nieszawka | D.JANC WORKSHOP",
+      "description": "Build About page with: Named mechanic section (placeholder: 'Damian Janc — właściciel i główny mechanik D.JANC WORKSHOP'), Workshop philosophy (uczciwy warsztat, kosztorys przed naprawą, wszystkie marki), Equipment section (placeholder for specific diagnostic equipment), Service area explanation (Wielka Nieszawka + Toruń + powiat toruński). E-E-A-T: real name + real location + specific equipment.",
+      "acceptance_criteria": [
+        "H1 = 'O Nas — D.JANC WORKSHOP'",
+        "Named person (Damian Janc) present",
+        "'Wielka Nieszawka' and phone number present",
+        "npm run build passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": 13,
+      "title": "Pricing Page (/cennik)",
+      "priority": 13,
+      "depends_on": [1, 2],
+      "url": "/cennik",
+      "h1": "Cennik Usług — D.JANC WORKSHOP Toruń",
+      "meta_title": "Cennik Warsztatu Samochodowego Toruń | D.JANC WORKSHOP",
+      "meta_description": "Sprawdź ceny usług w D.JANC WORKSHOP. Wymiana opon R16 od 144 zł. Diagnostyka od 80 zł. Wymiana oleju od 150 zł. ul. Toruńska 25, Wielka Nieszawka.",
+      "target_keyword": "cena warsztatu Toruń",
+      "description": "Build pricing page with price tables: Wulkanizacja/Opony (R15-16 stalowe 144zł, R15-16 alu 172zł, R17 stalowe 148zł, R17 alu 192zł, naprawa opony od 61zł, przechowywanie od 93zł), Olej & Filtry (wymiana oleju od 150-350zł), Diagnostyka (OBD od 80-150zł), Klimatyzacja (serwis od 150-400zł), Hamulce (klocki od 200zł, tarcze od 300zł), Geometria (od 95zł). Add disclaimer: 'Ceny orientacyjne. Dokładna wycena po oględzinach. Tel: 451-273-483.'",
+      "acceptance_criteria": [
+        "H1 = 'Cennik Usług — D.JANC WORKSHOP Toruń'",
+        "All price ranges visible in PLN",
+        "Disclaimer with phone number present",
+        "Price table is mobile-readable (not broken on small screens)",
+        "npm run build passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": 14,
+      "title": "FAQ Page (/faq)",
+      "priority": 14,
+      "depends_on": [1, 2],
+      "url": "/faq",
+      "h1": "Najczęściej Zadawane Pytania — D.JANC WORKSHOP",
+      "meta_title": "FAQ Warsztat Samochodowy Toruń | D.JANC WORKSHOP — Wielka Nieszawka",
+      "target_keyword": "pytania mechanik Toruń",
+      "description": "Build FAQ page with minimum 20 Q&A pairs in Polish. Categories: Pricing (ile kosztuje X, czy diagnostyka jest płatna), Process/Trust (czy dostanę kosztorys, jak przebiega naprawa, czy naprawiacie wszystkie marki, czy używacie oryginalnych części), Local (gdzie jesteście, jak dojechać, godziny, sobota), Seasonal (kiedy wymieniać opony, przechowywanie). Each answer must use answer-first format with specific PLN amounts and 'ul. Toruńska 25' anchor. Add FAQPage JSON-LD schema with ALL 20+ Q&As.",
+      "acceptance_criteria": [
+        "H1 = 'Najczęściej Zadawane Pytania — D.JANC WORKSHOP'",
+        "Minimum 20 Q&A pairs visible on page",
+        "FAQPage JSON-LD schema with all Q&As in <head>",
+        "Phone href='tel:+48451273483' in closing CTA",
+        "npm run build passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": 15,
+      "title": "Blog Index (/blog)",
+      "priority": 15,
+      "depends_on": [1, 2],
+      "url": "/blog",
+      "h1": "Blog — Porady Motoryzacyjne",
+      "meta_title": "Blog Motoryzacyjny | D.JANC WORKSHOP — Warsztat Toruń",
+      "description": "Build static blog index page. No CMS required — static Astro pages. Include 1 placeholder blog post card: 'Kiedy wymieniać opony na zimowe — poradnik 2026'. Card shows: title, date (Oct 2026), short excerpt, 'Czytaj więcej' link. Blog post file: src/pages/blog/kiedy-wymieniac-opony-na-zimowe.astro (placeholder content).",
+      "acceptance_criteria": [
+        "H1 = 'Blog — Porady Motoryzacyjne'",
+        "At least 1 blog post card visible",
+        "Blog post page renders at /blog/kiedy-wymieniac-opony-na-zimowe",
+        "npm run build passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": 16,
+      "title": "Reviews Page (/opinie)",
+      "priority": 16,
+      "depends_on": [1, 2],
+      "url": "/opinie",
+      "h1": "Opinie Klientów — D.JANC WORKSHOP",
+      "meta_title": "Opinie | Warsztat samochodowy Toruń | D.JANC WORKSHOP",
+      "description": "Build reviews page with: 5 placeholder review cards (Name, star rating 5/5, review text in Polish, car make/model placeholder), Google Business Profile link placeholder, CTA 'Zostaw opinię na Google' button, intro text about collecting reviews. All 5 placeholder reviews must sound authentic and mention specific services.",
+      "acceptance_criteria": [
+        "H1 = 'Opinie Klientów — D.JANC WORKSHOP'",
+        "5 review cards visible with stars, name, text",
+        "Google review CTA button present",
+        "npm run build passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": 17,
+      "title": "Schema Validation Pass",
+      "priority": 17,
+      "depends_on": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+      "description": "Validate all JSON-LD across all 18 pages. Check: no parse errors, no missing required fields, consistent NAP data (name, telephone, address), all service pages have Service schema, /faq has FAQPage schema, homepage has LocalBusiness + AutoRepair. Fix any malformed JSON-LD. Verify postalCode is 87-165.",
+      "acceptance_criteria": [
+        "No JSON-LD parse errors in any page's <head>",
+        "Homepage LocalBusiness schema has: name, telephone, address, geo, areaServed, hasOfferCatalog",
+        "All 6 service pages have Service + FAQPage schema",
+        "/faq has FAQPage schema with 20+ Q&As",
+        "npm run build passes with no errors"
+      ],
+      "passes": false
+    },
+    {
+      "id": 18,
+      "title": "sitemap.xml + robots.txt",
+      "priority": 18,
+      "depends_on": [17],
+      "description": "Install Astro sitemap integration: npx astro add sitemap. Add @astrojs/sitemap to astro.config.mjs integrations. Create public/robots.txt with: User-agent: * Allow: / Sitemap: https://djanc.pl/sitemap-index.xml. Run npm run build and verify sitemap-index.xml contains all 18+ page URLs.",
+      "acceptance_criteria": [
+        "/sitemap-index.xml generated at build time",
+        "sitemap includes all pages: /, /kontakt, /uslugi, all 6 service pages, /o-nas, /cennik, /faq, /blog, /opinie",
+        "/robots.txt allows all crawlers with correct sitemap URL",
+        "npm run build passes with no errors"
+      ],
+      "passes": false
+    }
+  ]
+}
