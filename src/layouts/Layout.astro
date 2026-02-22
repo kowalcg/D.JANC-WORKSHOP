@@ -1,0 +1,109 @@
+---
+import '../styles/global.css';
+interface Props {
+  title: string;
+  description: string;
+  schema?: string;
+}
+const { title, description, schema } = Astro.props;
+---
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={Astro.url.href} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="D.JANC WORKSHOP" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  {schema && <script type="application/ld+json" set:html={schema} />}
+  <!-- GA4: replace G-XXXXXXXXXX with tracking ID -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+</head>
+<body class="bg-white text-[#2d3436] font-[system-ui,-apple-system,sans-serif]">
+  <slot name="header">
+    <header class="sticky top-0 z-50 bg-[#1a2332] text-white shadow-md">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="/" class="text-xl font-bold tracking-tight">D.JANC WORKSHOP</a>
+        <nav class="hidden md:flex gap-6 text-sm font-medium">
+          <a href="/uslugi" class="hover:text-[#e17055] transition-colors">Usługi</a>
+          <a href="/cennik" class="hover:text-[#e17055] transition-colors">Cennik</a>
+          <a href="/faq" class="hover:text-[#e17055] transition-colors">FAQ</a>
+          <a href="/o-nas" class="hover:text-[#e17055] transition-colors">O Nas</a>
+          <a href="/kontakt" class="hover:text-[#e17055] transition-colors">Kontakt</a>
+        </nav>
+        <a href="tel:+48451273483"
+           class="bg-[#e17055] text-white px-4 py-2 rounded font-bold text-sm hover:bg-[#c0392b] transition-colors">
+          Zadzwoń: 451-273-483
+        </a>
+      </div>
+      <!-- Mobile nav -->
+      <div class="md:hidden border-t border-[#2d3f5e] px-4 py-2 flex gap-4 text-xs overflow-x-auto">
+        <a href="/uslugi" class="whitespace-nowrap hover:text-[#e17055]">Usługi</a>
+        <a href="/cennik" class="whitespace-nowrap hover:text-[#e17055]">Cennik</a>
+        <a href="/faq" class="whitespace-nowrap hover:text-[#e17055]">FAQ</a>
+        <a href="/o-nas" class="whitespace-nowrap hover:text-[#e17055]">O Nas</a>
+        <a href="/kontakt" class="whitespace-nowrap hover:text-[#e17055]">Kontakt</a>
+      </div>
+    </header>
+  </slot>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="bg-[#1a2332] text-white pt-12 pb-6 mt-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <!-- NAP -->
+        <div>
+          <h3 class="font-bold text-lg mb-3 text-[#e17055]">D.JANC WORKSHOP</h3>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            ul. Toruńska 25<br />
+            Wielka Nieszawka, 87-165<br />
+            woj. kujawsko-pomorskie
+          </p>
+          <a href="tel:+48451273483"
+             class="inline-block mt-3 bg-[#e17055] text-white px-4 py-2 rounded font-bold text-sm hover:bg-[#c0392b] transition-colors">
+            +48 451 273 483
+          </a>
+        </div>
+        <!-- Services -->
+        <div>
+          <h3 class="font-bold text-lg mb-3">Nasze Usługi</h3>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li><a href="/uslugi/diagnostyka-komputerowa-torun" class="hover:text-[#e17055]">Diagnostyka komputerowa</a></li>
+            <li><a href="/uslugi/mechanika-ogolna-torun" class="hover:text-[#e17055]">Mechanika ogólna</a></li>
+            <li><a href="/uslugi/wulkanizacja-torun" class="hover:text-[#e17055]">Wulkanizacja</a></li>
+            <li><a href="/uslugi/klimatyzacja-samochodowa-torun" class="hover:text-[#e17055]">Klimatyzacja samochodowa</a></li>
+            <li><a href="/uslugi/wymiana-oleju-torun" class="hover:text-[#e17055]">Wymiana oleju</a></li>
+            <li><a href="/uslugi/naprawa-hamulcow-torun" class="hover:text-[#e17055]">Naprawa hamulców</a></li>
+          </ul>
+        </div>
+        <!-- Hours -->
+        <div>
+          <h3 class="font-bold text-lg mb-3">Godziny otwarcia</h3>
+          <ul class="text-sm text-gray-300 space-y-1">
+            <li class="flex justify-between"><span>Poniedziałek – Piątek</span><span>8:00 – 17:00</span></li>
+            <li class="flex justify-between"><span>Sobota</span><span>8:00 – 13:00</span></li>
+            <li class="flex justify-between"><span>Niedziela</span><span>Zamknięte</span></li>
+          </ul>
+          <div class="mt-4 text-sm text-gray-300">
+            <a href="/kontakt" class="hover:text-[#e17055]">Kontakt</a> ·
+            <a href="/o-nas" class="hover:text-[#e17055]">O nas</a> ·
+            <a href="/opinie" class="hover:text-[#e17055]">Opinie</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-[#2d3f5e] pt-4 text-center text-xs text-gray-400">
+        <p>© {new Date().getFullYear()} D.JANC WORKSHOP · ul. Toruńska 25, Wielka Nieszawka · Tel: <a href="tel:+48451273483" class="hover:text-[#e17055]">451-273-483</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,16 @@
+---
+interface Props {
+  text?: string;
+  size?: 'sm' | 'md' | 'lg';
+}
+const { text = 'Zadzwoń Teraz: 451-273-483', size = 'md' } = Astro.props;
+const sizeClasses = {
+  sm: 'px-4 py-2 text-sm',
+  md: 'px-6 py-3 text-base',
+  lg: 'px-8 py-4 text-lg',
+};
+---
+<a href="tel:+48451273483"
+   class={`inline-block bg-[#e17055] text-white rounded font-bold hover:bg-[#c0392b] transition-colors ${sizeClasses[size]}`}>
+  {text}
+</a>

@@ -1,8 +1,9 @@
 {
+  "branchName": "ralph/website-build",
   "project": {
     "name": "D.JANC WORKSHOP Website",
-    "description": "Polish-language auto mechanic website — Wielka Nieszawka / Toruń. Astro 4.x + Tailwind CSS + Vercel. Goal: local SEO dominance + AI search visibility.",
-    "tech_stack": "Astro 4.x, Tailwind CSS, Vercel",
+    "description": "Polish-language auto mechanic website — Wielka Nieszawka / Toruń. Astro 5.x + Tailwind CSS + Vercel. Goal: local SEO dominance + AI search visibility.",
+    "tech_stack": "Astro 5.x, Tailwind CSS, Vercel",
     "build_command": "npm run build",
     "language": "Polish (pl)",
     "domain": "djanc.pl",
@@ -46,7 +47,7 @@
         "Tailwind CSS installed and working",
         "astro.config.mjs has output='static' and site='https://djanc.pl'"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": 2,
@@ -61,7 +62,7 @@
         "Footer shows D.JANC WORKSHOP, ul. Toruńska 25, Wielka Nieszawka, +48 451 273 483",
         "npm run build passes"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": 3,

@@ -1,0 +1,31 @@
+## Codebase Patterns
+- Layout.astro in src/layouts/ — accepts title, description, schema? props; imports global.css; lang="pl"
+- global.css uses `@import "tailwindcss"` (Tailwind v4, not @tailwind directives)
+- CallToAction.astro: reusable orange button with size prop (sm/md/lg)
+- All phone links: href="tel:+48451273483", display "451-273-483"
+- Colors: primary=#1a2332, accent=#e17055
+- Footer: 3-col grid (NAP | services | hours), bg-[#1a2332]
+- Header: sticky, logo left, desktop nav center, CTA right; mobile nav second row
+
+# Ralph Progress Log
+Started: Sat Feb 21 23:12:57 EST 2026
+---
+
+## 2026-02-21 - Story 1: Project Scaffold
+- Project already scaffolded in initial commit (Astro 5.x + Tailwind CSS v4 + sitemap)
+- astro.config.mjs: output='static', site='https://djanc.pl', @astrojs/sitemap integration
+- Created ralph/website-build branch from main
+- Files created/changed: none (scaffold existed)
+- **Learnings for future iterations:**
+  - Tailwind v4 uses @tailwindcss/vite plugin (not @astrojs/tailwind), CSS uses `@import "tailwindcss"`
+  - src/styles/global.css already has CSS custom properties for design system colors
+---
+
+## 2026-02-21 - Story 2: Layout Components — Header + Footer
+- What was implemented: Layout.astro (main layout with meta, OG, schema slot, sticky header, footer), CallToAction.astro (reusable orange CTA)
+- Files created/changed: src/layouts/Layout.astro, src/components/CallToAction.astro
+- **Learnings for future iterations:**
+  - Layout.astro includes header+footer inline (no separate component files needed for Astro 5 static)
+  - Footer has 3 columns: NAP / service links / hours — mobile stacks vertically
+  - Mobile nav fits in a scrollable second row under header
+---
