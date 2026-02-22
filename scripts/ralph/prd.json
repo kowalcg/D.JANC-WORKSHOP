@@ -84,7 +84,7 @@
         "Mobile: no horizontal scroll, phone button visible above fold",
         "npm run build passes"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": 4,

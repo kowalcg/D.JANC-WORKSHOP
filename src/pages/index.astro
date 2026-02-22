@@ -1,17 +1,211 @@
 ---
+import Layout from '../layouts/Layout.astro';
 
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["AutoRepair", "LocalBusiness"],
+  "name": "D.JANC WORKSHOP",
+  "url": "https://djanc.pl",
+  "telephone": "+48451273483",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ul. Toruńska 25",
+    "addressLocality": "Wielka Nieszawka",
+    "addressRegion": "kujawsko-pomorskie",
+    "postalCode": "87-165",
+    "addressCountry": "PL"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "53.0500",
+    "longitude": "18.5833"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday"],
+      "opens": "08:00",
+      "closes": "13:00"
+    }
+  ],
+  "areaServed": [
+    {"@type": "City", "name": "Toruń"},
+    {"@type": "Place", "name": "Wielka Nieszawka"},
+    {"@type": "Place", "name": "powiat toruński"}
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Usługi warsztatu samochodowego",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Diagnostyka komputerowa"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mechanika ogólna"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wulkanizacja"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Klimatyzacja samochodowa"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Wymiana oleju"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Naprawa hamulców"}}
+    ]
+  }
+});
 ---
+<Layout
+  title="Warsztat samochodowy Toruń | D.JANC WORKSHOP — Wielka Nieszawka"
+  description="Warsztat samochodowy przy ul. Toruńskiej 25 w Wielkiej Nieszawce. Diagnostyka, mechanika, wulkanizacja, klimatyzacja. Zadzwoń: 451-273-483."
+  schema={schema}
+>
+  <!-- HERO -->
+  <section class="bg-[#1a2332] text-white py-16 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+        Warsztat samochodowy<br />Wielka Nieszawka / Toruń
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-300 mb-2 font-medium">
+        Ceny znasz zanim przyjedziesz. Naprawa tylko tego, co potrzeba.
+      </p>
+      <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+        Profesjonalny serwis samochodowy przy ul. Toruńskiej 25 w Wielkiej Nieszawce — 7 km od centrum Torunia. Wszystkie marki.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+48451273483"
+           class="bg-[#e17055] text-white px-8 py-4 rounded font-bold text-lg hover:bg-[#c0392b] transition-colors">
+          Zadzwoń: 451-273-483
+        </a>
+        <a href="/uslugi"
+           class="border-2 border-white text-white px-8 py-4 rounded font-bold text-lg hover:bg-white hover:text-[#1a2332] transition-colors">
+          Zobacz Usługi
+        </a>
+      </div>
+    </div>
+  </section>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <!-- TRUST BAR -->
+  <section class="bg-[#e17055] text-white py-4 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6 text-sm font-medium text-center md:text-left">
+      <div class="flex items-center gap-2">
+        <span class="text-xl">📍</span>
+        <span>ul. Toruńska 25, Wielka Nieszawka (7 km od Torunia)</span>
+      </div>
+      <div class="hidden md:block text-white/50">|</div>
+      <div class="flex items-center gap-2">
+        <span class="text-xl">📞</span>
+        <a href="tel:+48451273483" class="font-bold underline hover:no-underline">
+          +48 451 273 483
+        </a>
+      </div>
+      <div class="hidden md:block text-white/50">|</div>
+      <div class="flex items-center gap-2">
+        <span class="text-xl">🕐</span>
+        <span>Pon–Pt: 8:00–17:00 | Sob: 8:00–13:00</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="py-16 px-4 bg-[#f8f9fa]">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-2 text-[#1a2332]">Nasze Usługi</h2>
+      <p class="text-center text-gray-500 mb-10">Profesjonalna obsługa wszystkich marek samochodów</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          {name: 'Diagnostyka Komputerowa', desc: 'Odczyt kodów błędów OBD, analiza układów elektronicznych.', price: 'od 80 PLN', href: '/uslugi/diagnostyka-komputerowa-torun', icon: '🔌'},
+          {name: 'Mechanika Ogólna', desc: 'Silnik, zawieszenie, skrzynia biegów, napęd, elektryka.', price: 'wycena indywidualna', href: '/uslugi/mechanika-ogolna-torun', icon: '🔧'},
+          {name: 'Wulkanizacja', desc: 'Wymiana i wyważanie opon, naprawa i przechowywanie.', price: 'od 36 PLN/szt', href: '/uslugi/wulkanizacja-torun', icon: '🛞'},
+          {name: 'Klimatyzacja', desc: 'Serwis, napełnienie czynnikiem, dezynfekcja układu.', price: 'od 150 PLN', href: '/uslugi/klimatyzacja-samochodowa-torun', icon: '❄️'},
+          {name: 'Wymiana Oleju', desc: 'Olej silnikowy + filtr + kontrola poziomu płynów.', price: 'od 150 PLN', href: '/uslugi/wymiana-oleju-torun', icon: '🛢️'},
+          {name: 'Naprawa Hamulców', desc: 'Klocki, tarcze, płyn hamulcowy, przewody. Bezpieczeństwo.', price: 'od 200 PLN', href: '/uslugi/naprawa-hamulcow-torun', icon: '🛑'},
+        ].map(s => (
+          <a href={s.href} class="block bg-white rounded-xl shadow-sm p-6 hover:shadow-md transition-shadow border border-gray-100 group">
+            <div class="text-4xl mb-3">{s.icon}</div>
+            <h3 class="text-lg font-bold text-[#1a2332] mb-2 group-hover:text-[#e17055] transition-colors">{s.name}</h3>
+            <p class="text-sm text-gray-500 mb-3">{s.desc}</p>
+            <span class="inline-block bg-[#f8f9fa] text-[#e17055] font-bold text-sm px-3 py-1 rounded">{s.price}</span>
+          </a>
+        ))}
+      </div>
+      <div class="text-center mt-10">
+        <a href="/cennik" class="inline-block border-2 border-[#1a2332] text-[#1a2332] px-8 py-3 rounded font-bold hover:bg-[#1a2332] hover:text-white transition-colors">
+          Zobacz pełny cennik
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-center mb-2 text-[#1a2332]">Dlaczego D.JANC WORKSHOP?</h2>
+      <p class="text-center text-gray-500 mb-12">Uczciwy warsztat w Wielkiej Nieszawce obsługujący całą okolicę Torunia</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center px-4">
+          <div class="text-5xl mb-4">💰</div>
+          <h3 class="text-xl font-bold text-[#1a2332] mb-3">Transparentne ceny</h3>
+          <p class="text-gray-600">Zawsze otrzymasz kosztorys przed rozpoczęciem naprawy. Żadnych ukrytych opłat — płacisz dokładnie tyle, ile uzgodniono.</p>
+        </div>
+        <div class="text-center px-4">
+          <div class="text-5xl mb-4">📋</div>
+          <h3 class="text-xl font-bold text-[#1a2332] mb-3">Kosztorys przed naprawą</h3>
+          <p class="text-gray-600">Diagnozujemy problem, wyjaśniamy co jest potrzebne i podajemy cenę zanim cokolwiek zaczniemy naprawiać. Ty decydujesz.</p>
+        </div>
+        <div class="text-center px-4">
+          <div class="text-5xl mb-4">🚗</div>
+          <h3 class="text-xl font-bold text-[#1a2332] mb-3">Wszystkie marki</h3>
+          <p class="text-gray-600">Serwisujemy samochody osobowe i dostawcze wszystkich producentów: Toyota, Volkswagen, Ford, Opel, BMW, Audi i wiele innych.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI-QUOTABLE PARAGRAPH -->
+  <section class="py-12 px-4 bg-[#f8f9fa]">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl font-bold text-[#1a2332] mb-4">Warsztat samochodowy Wielka Nieszawka — informacje</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        D.JANC WORKSHOP to warsztat samochodowy zlokalizowany przy ul. Toruńskiej 25 w Wielkiej Nieszawce (87-165), województwo kujawsko-pomorskie — zaledwie 7 km od centrum Torunia. Oferujemy kompleksową obsługę pojazdów: diagnostykę komputerową OBD od 80 PLN, wymianę opon (R15-16 komplet od 144 zł), serwis klimatyzacji od 150 PLN, wymianę oleju silnikowego od 150 do 350 PLN oraz naprawę układu hamulcowego od 200 PLN.
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Przyjmujemy wszystkie marki samochodów osobowych i dostawczych. Przed każdą naprawą wystawiamy kosztorys — klient zawsze zna cenę zanim mechanik przystąpi do pracy. Jesteśmy czynni od poniedziałku do piątku w godzinach 8:00–17:00 oraz w soboty od 8:00 do 13:00.
+      </p>
+      <p class="text-gray-700 leading-relaxed">
+        Obsługujemy klientów z Torunia, Wielkiej Nieszawki i całego powiatu toruńskiego. Umów wizytę telefonicznie: <a href="tel:+48451273483" class="text-[#e17055] font-bold hover:underline">451-273-483</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- GOOGLE MAPS -->
+  <section class="py-12 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl font-bold text-center mb-6 text-[#1a2332]">Gdzie nas znajdziesz?</h2>
+      <div class="rounded-xl overflow-hidden shadow-md">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2400.0!2d18.5833!3d53.0500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zVG9ydcWEc2thIDI1LCBXaWVsa2EgTmllc3phd2th!5e0!3m2!1spl!2spl!4v1700000000000!5m2!1spl!2spl"
+          width="100%"
+          height="400"
+          style="border:0;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="D.JANC WORKSHOP — ul. Toruńska 25, Wielka Nieszawka">
+        </iframe>
+      </div>
+      <p class="text-center text-gray-500 text-sm mt-3">ul. Toruńska 25, 87-165 Wielka Nieszawka</p>
+    </div>
+  </section>
+
+  <!-- CTA FOOTER SECTION -->
+  <section class="py-16 px-4 bg-[#1a2332] text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Potrzebujesz pomocy z samochodem?</h2>
+      <p class="text-gray-300 mb-8">Zadzwoń teraz i umów wizytę. Podamy cenę przed naprawą.</p>
+      <a href="tel:+48451273483"
+         class="inline-block bg-[#e17055] text-white px-10 py-5 rounded font-bold text-xl hover:bg-[#c0392b] transition-colors">
+        Zadzwoń: 451-273-483
+      </a>
+      <p class="text-gray-400 text-sm mt-4">ul. Toruńska 25, Wielka Nieszawka · Pon–Pt 8:00–17:00 · Sob 8:00–13:00</p>
+    </div>
+  </section>
+</Layout>

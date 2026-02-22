@@ -21,6 +21,16 @@ Started: Sat Feb 21 23:12:57 EST 2026
   - src/styles/global.css already has CSS custom properties for design system colors
 ---
 
+## 2026-02-21 - Story 3: Homepage (/)
+- What was implemented: Full homepage with hero, trust bar, 6 service cards, 3-col why-us, AI-quotable paragraph, Google Maps iframe, CTA section, LocalBusiness+AutoRepair JSON-LD schema
+- Files created/changed: src/pages/index.astro (rewritten from scaffold placeholder)
+- **Learnings for future iterations:**
+  - JSON.stringify() schema object passed as prop string to Layout.astro schema slot
+  - Service cards use .map() with array literal — JSX-like in Astro .astro files
+  - Google Maps embed: static iframe URL, no API key needed for basic embed
+  - Phone appears 3x: hero CTA, trust bar, footer CTA section
+---
+
 ## 2026-02-21 - Story 2: Layout Components — Header + Footer
 - What was implemented: Layout.astro (main layout with meta, OG, schema slot, sticky header, footer), CallToAction.astro (reusable orange CTA)
 - Files created/changed: src/layouts/Layout.astro, src/components/CallToAction.astro
