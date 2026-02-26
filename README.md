@@ -2,7 +2,7 @@
 
 Strona internetowa warsztatu samochodowego **D.JANC WORKSHOP** w Wielkiej Nieszawce k. Torunia.
 
-**Strona:** djanc.pl (do wdrożenia przez Tino)
+**Strona (live):** [djanc-workshop.vercel.app](https://djanc-workshop.vercel.app) | Docelowo: djanc.pl
 
 ---
 
@@ -54,12 +54,13 @@ Vercel automatycznie zaktualizuje stronę w ~2 minuty.
 
 ---
 
-## Wdrożenie na Vercel (pierwsze uruchomienie)
+## Wdrożenie na Vercel
 
-1. Wejdź na **[vercel.com](https://vercel.com)** → zaloguj przez GitHub
-2. **Add New Project** → wybierz `D.JANC-WORKSHOP` → kliknij **Deploy**
-3. Poczekaj ~2 minuty — gotowe! Dostaniesz link `*.vercel.app`
-4. Aby podpiąć domenę `djanc.pl`: **Settings → Domains** → dodaj rekord DNS u rejestratora domeny
+**Strona jest już wdrożona:** [djanc-workshop.vercel.app](https://djanc-workshop.vercel.app)
+
+Każdy `git push` do gałęzi `main` automatycznie aktualizuje stronę na Vercel (~2 minuty).
+
+Aby podpiąć domenę `djanc.pl`: Wejdź na [vercel.com](https://vercel.com) → **Settings → Domains** → dodaj `djanc.pl` → ustaw rekord DNS u rejestratora domeny.
 
 ---
 
